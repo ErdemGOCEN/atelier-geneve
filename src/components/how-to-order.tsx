@@ -31,7 +31,6 @@ export default function HowToOrder() {
       <div className="bg-muted">
         <div className="py-32 relative px-4 md:px-6 container mx-auto">
           <div className="space-y-4 text-center mb-12">
-            <p className="text-muted-foreground">Processus de service</p>
             <h2 className="text-5xl font-bold text-balance w-full lg:w-1/3 mx-auto">
               Comment obtenir nos services informatiques à Genève
             </h2>

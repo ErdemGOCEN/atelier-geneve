@@ -8,33 +8,32 @@ const specs = [
     icon: <IdCardLanyard className="size-10 text-sky-blue" />,
     title: "Techniciens Certifiés",
     description:
-      "Nos techniciens sont certifiés et formés aux dernières technologies. Chaque intervention est réalisée par des experts qualifiés avec plus de 5 ans d'expérience à Genève.",
+      "Nos techniciens sont certifiés et formés aux dernières technologies. Chaque intervention est réalisée par des experts qualifiés avec plus de 5 ans d'expérience.",
   },
   {
     id: "2",
     icon: <Puzzle className="size-10 text-sky-blue" />,
     title: "Pièces d'Origine",
     description:
-      "Nous utilisons uniquement des pièces détachées d'origine et de qualité supérieure. Garantie assurée sur tous les composants remplacés à Genève.",
+      "Nous utilisons uniquement des pièces détachées d'origine et de qualité supérieure. Garantie assurée sur tous les composants remplacés.",
   },
   {
     id: "3",
     icon: <MessageSquareHeart className="size-10 text-sky-blue" />,
     title: "Consultation Gratuite",
     description:
-      "Bénéficiez d'une consultation gratuite avant toute intervention. Nous évaluons votre problème et vous proposons la meilleure solution adaptée à Genève.",
+      "Bénéficiez d'une consultation gratuite avant toute intervention. Nous évaluons votre problème et vous proposons la meilleure solution adaptée.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
     <section id="why-choose-us">
-      <div className="px-4 md:px-6 container mx-auto py-12 lg:py-36 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div className="space-y-12 text-center lg:text-left">
-          <div className="space-y-4 text-center lg:text-left">
-            <p className="text-muted-foreground">Pourquoi nous choisir</p>
+      <div className="px-4 md:px-6 container mx-auto py-8 lg:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-6 text-center">
+          <div className="space-y-4 text-center">
             <h2 className="text-5xl font-bold text-balance">
-              Nous réparons tous les modèles de portables et ordinateurs à Genève
+              Nous réparons tous les modèles de portables et ordinateurs
             </h2>
             <p className="text-muted-foreground text-balance">
               Atelier Genève se distingue par son expertise technique, son service client exceptionnel et son engagement envers la qualité. Nous prenons soin de vos appareils comme s'ils étaient les nôtres.

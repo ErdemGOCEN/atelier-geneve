@@ -226,13 +226,12 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section id="testimonials">
-      <div className="relative container py-32 px-4 md:px-6 mx-auto">
+      <div className="relative container py-24 px-4 md:px-6 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-muted-foreground text-center">Ce qu'ils disent</p>
           <h2 className="text-foreground mb-4 text-center text-4xl leading-[1.2] font-bold tracking-tighter md:text-5xl">
             Ce que disent nos clients à Genève
           </h2>
