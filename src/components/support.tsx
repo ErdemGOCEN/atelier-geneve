@@ -21,9 +21,9 @@ const cards = [
   {
     id: "1",
     icon: <MessageSquare className="mx-auto size-10 text-sky-blue" />,
-    title: "Consultations",
+    title: "Consultation Gratuite",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Contactez notre équipe d'experts pour une évaluation gratuite de votre problème informatique. Obtenez des conseils professionnels et un devis sans engagement à Genève.",
     link: (
       <CardFooter className="justify-center">
         <Link
@@ -34,7 +34,7 @@ const cards = [
           )}
         >
           <MessageCircleMore />
-          Chat Now
+          Discuter Maintenant
         </Link>
       </CardFooter>
     ),
@@ -42,9 +42,9 @@ const cards = [
   {
     id: "2",
     icon: <FileText className="mx-auto size-10 text-sky-blue" />,
-    title: "Ticket Support",
+    title: "Support par Ticket",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Envoyez-nous un ticket détaillé pour des problèmes complexes. Notre équipe traite votre demande rapidement et vous tient informé de l'avancement à chaque étape.",
     link: (
       <CardFooter className="justify-center">
         <Link
@@ -55,7 +55,7 @@ const cards = [
           )}
         >
           <Send />
-          Send Ticket
+          Envoyer un Ticket
         </Link>
       </CardFooter>
     ),
@@ -63,9 +63,9 @@ const cards = [
   {
     id: "3",
     icon: <UserPlus className="mx-auto size-10 text-sky-blue" />,
-    title: "Customer Support",
+    title: "Support Client",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Besoin d'une assistance immédiate ? Contactez directement notre service client. Notre équipe est disponible pour répondre à toutes vos questions techniques à Genève.",
     link: (
       <CardFooter className="justify-center">
         <Link
@@ -76,7 +76,7 @@ const cards = [
           )}
         >
           <Phone />
-          Call Us
+          Nous Appeler
         </Link>
       </CardFooter>
     ),
@@ -91,12 +91,11 @@ export default function Support() {
 
         <div className="p-4 md:p-6 container mx-auto space-y-4 text-center lg:text-left">
           <h1 className="text-white text-5xl lg:text-7xl font-bold text-balance lg:w-1/2 text-center lg:text-left z-10">
-            We provide top-notch quality computer repair services
+            Des services de réparation informatique de qualité supérieure à Genève
           </h1>
 
           <p className="text-sky-100 font-semibold capitalize lg:w-1/3 text-center lg:text-left">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-            sunt amet inventore, at et odio ut quam deleniti commodi laboriosam!
+            Atelier Genève vous offre des solutions informatiques professionnelles avec diagnostic complet, réparation rapide et support technique expert pour tous vos appareils à Genève.
           </p>
 
           <Link
@@ -106,7 +105,7 @@ export default function Support() {
               "rounded-full"
             )}
           >
-            Discover More
+            En Savoir Plus
           </Link>
         </div>
 
@@ -118,7 +117,7 @@ export default function Support() {
                 <CardTitle>{card.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-center">{card.content}</CardContent>
-              <CardFooter className="justify-center">{card.link}</CardFooter>
+              {card.link}
             </Card>
           ))}
         </div>
@@ -140,7 +139,7 @@ export default function Support() {
                   "rounded-full"
                 )}
               >
-                Discover More
+                En Savoir Plus
               </Link>
             </CardFooter>
           </Card>

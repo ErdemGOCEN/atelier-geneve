@@ -6,23 +6,23 @@ import React from "react";
 const infos = [
   {
     id: "1",
-    value: "14K+",
-    title: "Happy Clients",
+    value: "500+",
+    title: "Clients Satisfaits",
   },
   {
     id: "2",
-    value: "4K+",
-    title: "Members Active",
+    value: "200+",
+    title: "Interventions Mensuelles",
   },
   {
     id: "3",
-    value: "3",
-    title: "Certified Experts",
+    value: "5",
+    title: "Experts Certifiés",
   },
   {
     id: "4",
-    value: "5+",
-    title: "Years Experience",
+    value: "8+",
+    title: "Ans d'Expérience",
   },
 ];
 
@@ -35,13 +35,10 @@ export default function MemberShip() {
         <div className="px-4 md:px-6 container mx-auto text-secondary">
           <div className="space-y-4 text-center w-full lg:w-1/2 mx-auto">
             <h2 className="text-5xl font-bold text-balance">
-              Discount up to 50% for member only.
+              Service informatique professionnel à Genève
             </h2>
             <p className="text-sky-100 text-balance">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Suscipit, provident numquam molestiae dolor beatae at rerum animi
-              enim. Odit veritatis accusamus, repudiandae reiciendis magnam
-              officiis non vero quaerat iste repellendus!
+              Atelier Genève vous propose des solutions informatiques complètes pour particuliers et professionnels. Notre équipe d'experts certifiés intervient rapidement pour réparer vos ordinateurs, installer vos systèmes et protéger vos données à Genève et région.
             </p>
 
             <Link
@@ -51,7 +48,7 @@ export default function MemberShip() {
                 "rounded-full"
               )}
             >
-              Contact Us
+              Nous Contacter
             </Link>
           </div>
         </div>

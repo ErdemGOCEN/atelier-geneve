@@ -10,11 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const navItems = [
   {
-    name: "Home",
+    name: "Accueil",
     link: "/",
   },
   {
-    name: "About Us",
+    name: "À propos",
     link: "/#who-we-are",
   },
   {
@@ -22,11 +22,11 @@ const navItems = [
     link: "/#what-we-offer",
   },
   {
-    name: "Projects",
+    name: "Projets",
     link: "/#why-choose-us",
   },
   {
-    name: "Contact Us",
+    name: "Contact",
     link: "/#support",
   },
 ];
@@ -50,7 +50,7 @@ export default function Header() {
           trigger: document.body,
           start: "top top",
           end: `+=${headerHeight}`,
-          scrub: 1, // Smooth scroll ile senkronize
+          scrub: 1,
           onUpdate: (self) => {
             const progress = self.progress;
             gsap.to(header, {
@@ -84,7 +84,7 @@ export default function Header() {
             >
               <div className="relative h-6 w-6 bg-secondary border text-white flex items-center justify-center rounded-md text-sm antialiased" />
               <div className="flex flex-col">
-                <h1 className="text-white font-sans">REPAIRMAN</h1>
+                <h1 className="text-white font-sans">ATELIER GENÈVE</h1>
               </div>
             </a>
           </div>
@@ -111,7 +111,7 @@ export default function Header() {
           >
             <div className="relative h-6 w-6 bg-secondary border flex items-center justify-center rounded-md text-sm antialiased" />
             <div className="flex flex-col">
-              <h1 className="text-secondary font-sans">REPAIRMAN</h1>
+              <h1 className="text-secondary font-sans">ATELIER GENÈVE</h1>
             </div>
           </a>
 

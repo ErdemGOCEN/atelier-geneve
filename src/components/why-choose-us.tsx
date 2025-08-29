@@ -6,44 +6,41 @@ const specs = [
   {
     id: "1",
     icon: <IdCardLanyard className="size-10 text-sky-blue" />,
-    title: "Certified Technician",
+    title: "Techniciens Certifiés",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ab in quos maxime et quis vero? Fuga sapiente modi deserunt.",
+      "Nos techniciens sont certifiés et formés aux dernières technologies. Chaque intervention est réalisée par des experts qualifiés avec plus de 5 ans d'expérience à Genève.",
   },
   {
     id: "2",
     icon: <Puzzle className="size-10 text-sky-blue" />,
-    title: "Original Spareparts",
+    title: "Pièces d'Origine",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ab in quos maxime et quis vero? Fuga sapiente modi deserunt.",
+      "Nous utilisons uniquement des pièces détachées d'origine et de qualité supérieure. Garantie assurée sur tous les composants remplacés à Genève.",
   },
   {
     id: "3",
     icon: <MessageSquareHeart className="size-10 text-sky-blue" />,
-    title: "Free Consultations",
+    title: "Consultation Gratuite",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ab in quos maxime et quis vero? Fuga sapiente modi deserunt.",
+      "Bénéficiez d'une consultation gratuite avant toute intervention. Nous évaluons votre problème et vous proposons la meilleure solution adaptée à Genève.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
     <section id="why-choose-us">
-      <div className="px-4 md:px-6 container mx-auto py-12 lg:y-36 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="px-4 md:px-6 container mx-auto py-12 lg:py-36 grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="space-y-12 text-center lg:text-left">
           <div className="space-y-4 text-center lg:text-left">
-            <p className="text-muted-foreground">Why choose us</p>
+            <p className="text-muted-foreground">Pourquoi nous choisir</p>
             <h2 className="text-5xl font-bold text-balance">
-              We repair laptops and desktops for all major brands.
+              Nous réparons tous les modèles de portables et ordinateurs à Genève
             </h2>
             <p className="text-muted-foreground text-balance">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Suscipit, provident numquam molestiae dolor beatae at rerum animi
-              enim.
+              Atelier Genève se distingue par son expertise technique, son service client exceptionnel et son engagement envers la qualité. Nous prenons soin de vos appareils comme s'ils étaient les nôtres.
             </p>
           </div>
 
-          {/*  */}
           <div className="space-y-4">
             {specs.map((spec) => (
               <Card key={spec.id} className="shadow-lg">
@@ -63,7 +60,7 @@ export default function WhyChooseUs() {
           </div>
         </div>
         <div className="rounded-md overflow-hidden shadow-sm">
-          <Image src={"/why-choose-us.webp"} alt="why choose us" />
+          <Image src={"/why-choose-us.webp"} alt="pourquoi choisir Atelier Genève" />
         </div>
       </div>
     </section>

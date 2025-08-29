@@ -5,23 +5,23 @@ const cards = [
   {
     id: "1",
     icon: <MessageSquare className="mx-auto size-10 text-sky-blue" />,
-    title: "Consultations",
+    title: "Consultation Gratuite",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Contactez-nous pour une évaluation gratuite de votre problème informatique. Notre technicien expert analyse votre besoin et vous propose la meilleure solution à Genève.",
   },
   {
     id: "2",
     icon: <FileText className="mx-auto size-10 text-sky-blue" />,
-    title: "Ticket Support",
+    title: "Diagnostic & Devis",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Nous réalisons un diagnostic complet de votre appareil et vous fournissons un devis détaillé avec les interventions nécessaires et les délais de réalisation.",
   },
   {
     id: "3",
     icon: <UserPlus className="mx-auto size-10 text-sky-blue" />,
-    title: "Customer Support",
+    title: "Intervention & Support",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Notre équipe intervient rapidement pour réparer votre ordinateur, installer vos logiciels ou sécuriser votre système. Support continu disponible à Genève.",
   },
 ];
 
@@ -31,9 +31,9 @@ export default function HowToOrder() {
       <div className="bg-muted">
         <div className="py-32 relative px-4 md:px-6 container mx-auto">
           <div className="space-y-4 text-center mb-12">
-            <p className="text-muted-foreground">How to order</p>
+            <p className="text-muted-foreground">Processus de service</p>
             <h2 className="text-5xl font-bold text-balance w-full lg:w-1/3 mx-auto">
-              Easy step for getting the services
+              Comment obtenir nos services informatiques à Genève
             </h2>
           </div>
 

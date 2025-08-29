@@ -8,23 +8,23 @@ const cards = [
   {
     id: "1",
     icon: <Network className="mx-auto size-10 text-sky-blue" />,
-    title: "Hardware",
+    title: "Matériel Informatique",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Réparation et maintenance de vos ordinateurs, portables et composants. Diagnostic complet et solutions professionnelles à Genève.",
   },
   {
     id: "2",
     icon: <AppWindow className="mx-auto size-10 text-sky-blue" />,
-    title: "Software",
+    title: "Logiciels",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Installation et configuration de systèmes d'exploitation, mises à jour logicielles, et optimisation de vos applications pour un fonctionnement optimal.",
   },
   {
     id: "3",
     icon: <ShieldCheck className="mx-auto size-10 text-sky-blue" />,
     title: "Antivirus",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda perferendis sapiente deserunt.",
+      "Protection complète contre les virus et logiciels malveillants. Installation d'antivirus et nettoyage de vos appareils infectés à Genève.",
   },
 ];
 
@@ -36,11 +36,11 @@ export default function Hero() {
 
         <div className="p-4 md:p-6 container mx-auto space-y-4 text-center lg:text-left">
           <h1 className="text-white text-5xl lg:text-7xl font-bold text-balance lg:w-1/2 text-center lg:text-left z-10">
-            The smart way to fix computers
+            La solution intelligente pour réparer vos ordinateurs
           </h1>
 
           <p className="text-sky-100 text-base lg:text-2xl font-semibold capitalize lg:w-1/3 text-center lg:text-left">
-            Computer services is here to help support your business!
+            Atelier Genève : Votre expert en services informatiques pour particuliers et professionnels à Genève
           </p>
 
           <Link
@@ -50,7 +50,7 @@ export default function Hero() {
               "rounded-full"
             )}
           >
-            Discover More
+            Découvrir Nos Services
           </Link>
         </div>
 

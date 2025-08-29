@@ -19,55 +19,57 @@ const plans = [
     name: "Basic",
     icon: Star,
     price: {
-      monthly: 49,
-      yearly: "Free forever",
+      monthly: 79,
+      yearly: "Pour toujours gratuit",
     },
-    description: "30 minutes of Tech Support",
+    description: "Support technique de 30 minutes",
     features: [
-      "50 API calls / month",
-      "60 second checks",
-      "Single-user account",
-      "5 monitors",
-      "Basic email support",
+      "Diagnostic complet de votre appareil",
+      "Nettoyage virus et logiciels malveillants",
+      "Mise à jour du système d'exploitation",
+      "Installation antivirus de base",
+      "Support par email",
     ],
-    cta: "Get started for free",
+    cta: "Commencer gratuitement",
   },
   {
     id: "premium",
     name: "Premium",
     icon: Zap,
     price: {
-      monthly: 79,
-      yearly: 75,
+      monthly: 129,
+      yearly: 119,
     },
-    description: "60 minutes of Tech Support",
+    description: "Support technique de 60 minutes",
     features: [
-      "Unlimited API calls",
-      "30 second checks",
-      "Multi-user account",
-      "10 monitors",
-      "Priority email support",
+      "Tous les services Basic inclus",
+      "Installation et configuration logiciels",
+      "Optimisation des performances",
+      "Sauvegarde de vos données importantes",
+      "Support prioritaire par téléphone et email",
+      "Intervention sur site à Genève",
     ],
-    cta: "Subscribe to Pro",
+    cta: "S'abonner au Premium",
     popular: true,
   },
   {
     id: "luxury",
-    name: "Luxury",
+    name: "Complet",
     icon: Shield,
     price: {
-      monthly: 129,
-      yearly: "Get in touch for pricing",
+      monthly: 199,
+      yearly: "Contactez-nous pour devis",
     },
-    description: "90 minutes of Tech Support",
+    description: "Support technique de 90 minutes",
     features: [
-      "You can DDOS our API.",
-      "Nano-second checks.",
-      "Invite your extended family.",
-      "Unlimited monitors.",
-      "We'll sit on your desk.",
+      "Tous les services Premium inclus",
+      "Maintenance préventive mensuelle",
+      "Support 24/7 pour urgences",
+      "Intervention prioritaire en 24h",
+      "Formation utilisateur incluse",
+      "Assistance complète pour votre entreprise",
     ],
-    cta: "Contact us",
+    cta: "Nous contacter",
   },
 ];
 
@@ -82,7 +84,7 @@ export default function Pricing() {
               className="border-sky-blue/20 bg-sky-blue/15 mb-4 rounded-full px-4 py-1 text-sm font-medium"
             >
               <Sparkles className="text-primary mr-1 h-3.5 w-3.5 animate-pulse" />
-              Affordable Price
+              Tarifs Avantageux
             </Badge>
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
@@ -90,7 +92,7 @@ export default function Pricing() {
               transition={{ duration: 0.5 }}
               className="font-bold text-5xl text-balance"
             >
-              Pick the perfect plan for your needs
+              Choisissez le plan parfait pour vos besoins informatiques
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -98,8 +100,7 @@ export default function Pricing() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-muted-foreground max-w-md pt-2 text-lg"
             >
-              Simple, transparent pricing that scales with your business. No
-              hidden fees, no surprises.
+              Tarification simple et transparente pour particuliers et professionnels à Genève. Aucun frais caché, aucune surprise.
             </motion.p>
           </div>
 
@@ -129,7 +130,7 @@ export default function Pricing() {
                     <div className="absolute -top-3 right-0 left-0 mx-auto w-fit">
                       <Badge className="bg-sky-blue text-primary-foreground rounded-full px-4 py-1 shadow-sm">
                         <Sparkles className="mr-1 h-3.5 w-3.5" />
-                        Popular
+                        Populaire
                       </Badge>
                     </div>
                   )}
@@ -157,7 +158,7 @@ export default function Pricing() {
                               className={cn("text-3xl font-bold text-sky-blue")}
                               format={{
                                 style: "currency",
-                                currency: "USD",
+                                currency: "CHF",
                                 maximumFractionDigits: 0,
                               }}
                               value={
@@ -167,7 +168,7 @@ export default function Pricing() {
                               }
                             />
                             <span className="text-muted-foreground ml-1 text-sm">
-                              / one time cost
+                              / intervention unique
                             </span>
                           </div>
                         ) : (

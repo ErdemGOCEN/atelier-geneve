@@ -39,15 +39,13 @@ export function TestimonialCard({
   img,
   role,
   className,
-  ...props // Capture the rest of the props
+  ...props
 }: TestimonialCardProps) {
   return (
     <div
       className={cn(
         "mb-4 flex w-full cursor-pointer break-inside-avoid flex-col items-center justify-between gap-6 rounded-xl p-4",
-        // theme styles
         "border-border bg-card/50 border shadow-sm",
-        // hover effect
         "transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md",
         className
       )}
@@ -84,149 +82,142 @@ export function TestimonialCard({
 
 const testimonials = [
   {
-    name: "Jordan Hayes",
-    role: "CTO at Quantum Innovations",
-    img: "https://randomuser.me/api/portraits/men/22.jpg",
+    name: "Marie Dubois",
+    role: "Directrice Marketing, Genève",
+    img: "https://randomuser.me/api/portraits/women/22.jpg",
     description: (
       <p>
-        NexaUI has completely transformed our development workflow.
+        Atelier Genève a sauvé mon ordinateur professionnel.
         <Highlight>
-          The component system saved us weeks of custom coding and design work.
+          Le technicien est venu le lendemain et a résolu tous mes problèmes.
         </Highlight>{" "}
-        Our team can now focus on business logic instead of UI details.
+        Service rapide et professionnel, je recommande vivement !
       </p>
     ),
   },
   {
-    name: "Maya Rodriguez",
-    role: "Lead Developer at Skyline Digital",
-    img: "https://randomuser.me/api/portraits/women/33.jpg",
+    name: "Thomas Martin",
+    role: "Photographe Freelance, Carouge",
+    img: "https://randomuser.me/api/portraits/men/33.jpg",
     description: (
       <p>
-        I was skeptical at first, but NexaUI proved me wrong.
+        Mon MacBook avait des virus après un voyage.
         <Highlight>
-          The accessibility features and responsive design are top-notch.
+          Atelier Genève l'a complètement nettoyé et sécurisé.
         </Highlight>{" "}
-        It&apos;s rare to find a framework that prioritizes both aesthetics and
-        functionality.
+        Mon ordinateur fonctionne mieux qu'avant, merci !
       </p>
     ),
   },
   {
-    name: "Ethan Park",
-    role: "Startup Founder at Elevate Labs",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
-    description: (
-      <p>
-        As a non-technical founder, NexaUI has been a game-changer for our MVP.
-        <Highlight>We launched three months ahead of schedule.</Highlight> The
-        modular components allowed us to iterate quickly based on user feedback.
-      </p>
-    ),
-  },
-  {
-    name: "Zoe Bennett",
-    role: "UX Architect at Fusion Systems",
+    name: "Sophie Lambert",
+    role: "Comptable, Vernier",
     img: "https://randomuser.me/api/portraits/women/44.jpg",
     description: (
       <p>
-        NexaUI&apos;s attention to detail is impressive.
+        Installation complète de mon nouveau PC par Atelier Genève.
         <Highlight>
-          The micro-interactions and animations create a polished experience.
+          Tout a été configuré parfaitement avec mes logiciels de comptabilité.
         </Highlight>{" "}
-        It&apos;s become our go-to solution for client projects with tight
-        deadlines.
+        Un service sur mesure et très compétent.
       </p>
     ),
   },
   {
-    name: "Victor Nguyen",
-    role: "Product Lead at FinEdge",
+    name: "Jean Petit",
+    role: "Restaurant Le Jardin, Genève",
     img: "https://randomuser.me/api/portraits/men/55.jpg",
     description: (
       <p>
-        Our financial dashboard needed a complete overhaul, and NexaUI
-        delivered.
+        Notre système de caisse a planté avant le service.
         <Highlight>
-          The data visualization components are both beautiful and functional.
+          L'équipe d'Atelier Genève est intervenue en urgence et a tout réparé.
         </Highlight>{" "}
-        User engagement has increased by 47% since the redesign.
+        Professionnalisme et réactivité exceptionnels !
       </p>
     ),
   },
   {
-    name: "Amara Johnson",
-    role: "Frontend Specialist at Nimbus Tech",
+    name: "Claire Moreau",
+    role: "Architecte d'Intérieur, Eaux-Vives",
     img: "https://randomuser.me/api/portraits/women/67.jpg",
     description: (
       <p>
-        The documentation for NexaUI is exceptional.
+        Mes données importantes étaient bloquées sur un disque dur.
         <Highlight>
-          I was able to implement complex UI patterns in just a few hours.
+          Atelier Genève a récupéré tous mes projets sans aucun problème.
         </Highlight>{" "}
-        The TypeScript support is also a major productivity booster.
+        Un vrai miracle, je suis très reconnaissante !
       </p>
     ),
   },
   {
-    name: "Leo Tanaka",
-    role: "Creative Technologist at Prism Agency",
+    name: "David Rousseau",
+    role: "Startup Tech, Plan-les-Ouates",
     img: "https://randomuser.me/api/portraits/men/78.jpg",
     description: (
       <p>
-        NexaUI has the perfect balance of flexibility and structure.
+        Support informatique mensuel pour notre petite entreprise.
         <Highlight>
-          We can maintain brand consistency while still creating unique
-          experiences.
+          Atelier Genève gère toute notre infrastructure informatique.
         </Highlight>{" "}
-        Our clients are consistently impressed with the results.
+        Fiabilité totale et tarifs très compétitifs à Genève.
       </p>
     ),
   },
   {
-    name: "Sophia Martinez",
-    role: "E-commerce Director at StyleHub",
+    name: "Isabelle Blanc",
+    role: "Professeure, Meyrin",
     img: "https://randomuser.me/api/portraits/women/89.jpg",
     description: (
       <p>
-        Our conversion rates have increased by 28% since implementing NexaUI.
+        Mon ordinateur familial ralentissait énormément.
         <Highlight>
-          The checkout flow components are optimized for both desktop and
-          mobile.
+          Atelier Genève l'a optimisé complètement en 2 heures.
         </Highlight>{" "}
-        The dark mode support was also a huge hit with our customers.
+        Mes enfants peuvent travailler sans problème maintenant !
       </p>
     ),
   },
   {
-    name: "Aiden Wilson",
-    role: "Healthcare Solutions Architect",
+    name: "Pierre Garnier",
+    role: "Médecin, Champel",
     img: "https://randomuser.me/api/portraits/men/92.jpg",
     description: (
       <p>
-        NexaUI&apos;s accessibility features were crucial for our healthcare
-        platform.
+        Urgence informatique le week-end pour mon cabinet médical.
         <Highlight>
-          We passed compliance requirements with minimal additional work.
+          Atelier Genève a répondu immédiatement et résolu le problème.
         </Highlight>{" "}
-        The form components are especially well-designed for complex data entry.
+        Service d'urgence disponible et très professionnel.
       </p>
     ),
   },
   {
-    name: "Olivia Chen",
-    role: "EdTech Product Manager at LearnSphere",
+    name: "Nathalie Simon",
+    role: "Boutique de Mode, Rue du Rhône",
     img: "https://randomuser.me/api/portraits/women/29.jpg",
     description: (
       <p>
-        Our educational platform needed to work for students of all ages and
-        abilities.
+        Installation de notre système de point de vente par Atelier Genève.
         <Highlight>
-          NexaUI&apos;s inclusive design principles made this possible without
-          compromise.
+          Configuration parfaite et formation de notre équipe incluse.
         </Highlight>{" "}
-        The interactive components have significantly improved student
-        engagement.
+        Un partenaire informatique fiable pour notre commerce.
+      </p>
+    ),
+  },
+  {
+    name: "Marc Bernard",
+    role: "Consultant IT, Genève",
+    img: "https://randomuser.me/api/portraits/men/45.jpg",
+    description: (
+      <p>
+        Même en tant que professionnel IT, j'utilise Atelier Genève.
+        <Highlight>
+          Leur expertise en réparation hardware est impressionnante.
+        </Highlight>{" "}
+        Des techniciens compétents et honnêtes, rares à Genève !
       </p>
     ),
   },
@@ -241,9 +232,9 @@ export default function Testimonials() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-muted-foreground text-center">What they say</p>
+          <p className="text-muted-foreground text-center">Ce qu'ils disent</p>
           <h2 className="text-foreground mb-4 text-center text-4xl leading-[1.2] font-bold tracking-tighter md:text-5xl">
-            What our users are saying
+            Ce que disent nos clients à Genève
           </h2>
         </motion.div>
 

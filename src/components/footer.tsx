@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 const links = [
   {
-    title: "Features",
+    title: "Fonctionnalités",
     href: "#",
   },
   {
@@ -10,19 +10,19 @@ const links = [
     href: "#",
   },
   {
-    title: "Customers",
+    title: "Clients",
     href: "#",
   },
   {
-    title: "Pricing",
+    title: "Tarifs",
     href: "#",
   },
   {
-    title: "Help",
+    title: "Aide",
     href: "#",
   },
   {
-    title: "About",
+    title: "À propos",
     href: "#",
   },
 ];
@@ -33,16 +33,12 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-6">
         <Link
           to="/"
-          aria-label="go home"
+          aria-label="aller à l'accueil"
           className="mx-auto size-fit flex items-center justify-center space-x-2 text-2xl font-bold text-center"
         >
-          {/* <a
-              className="flex items-center justify-center space-x-2 text-2xl font-bold py-6 text-center text-neutral-600"
-              href="/"
-            > */}
           <div className="relative h-6 w-6 bg-black border text-white flex items-center justify-center rounded-md text-sm antialiased" />
           <div className="flex flex-col">
-            <h1 className="font-sans">REPAIRMAN</h1>
+            <h1 className="font-sans">ATELIER GENÈVE</h1>
           </div>
         </Link>
 
@@ -186,7 +182,7 @@ export default function Footer() {
         </div>
         <span className="text-muted-foreground block text-center text-sm">
           {" "}
-          © {new Date().getFullYear()} Repairman, All rights reserved
+          © {new Date().getFullYear()} Atelier Genève, Tous droits réservés
         </span>
       </div>
     </footer>
