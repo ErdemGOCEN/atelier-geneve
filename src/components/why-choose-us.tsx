@@ -28,7 +28,7 @@ const specs = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us">
+    <section id="pourquoi-nous-choisir">
       <div className="px-4 md:px-6 container mx-auto py-8 lg:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-6 text-center">
           <div className="space-y-4 text-center">
@@ -59,7 +59,11 @@ export default function WhyChooseUs() {
           </div>
         </div>
         <div className="rounded-md overflow-hidden shadow-sm">
-          <Image src={"/why-choose-us.webp"} alt="pourquoi choisir Atelier Genève" />
+          <Image 
+            src={"/why-choose-us.jpg"} 
+            alt="pourquoi choisir Atelier Genève" 
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>

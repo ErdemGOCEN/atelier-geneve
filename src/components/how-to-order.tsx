@@ -27,7 +27,7 @@ const cards = [
 
 export default function HowToOrder() {
   return (
-    <section id="how-to-order">
+    <section id="contact">
       <div className="bg-muted">
         <div className="py-32 relative px-4 md:px-6 container mx-auto">
           <div className="space-y-4 text-center mb-12">

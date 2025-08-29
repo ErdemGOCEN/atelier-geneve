@@ -15,19 +15,19 @@ const navItems = [
   },
   {
     name: "À propos",
-    link: "/#who-we-are",
+    link: "/#a-propos",
   },
   {
     name: "Services",
-    link: "/#what-we-offer",
+    link: "/#nos-services",
   },
   {
     name: "Projets",
-    link: "/#why-choose-us",
+    link: "/#pourquoi-nous-choisir",
   },
   {
     name: "Contact",
-    link: "/#support",
+    link: "/#contact",
   },
 ];
 
