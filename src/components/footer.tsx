@@ -1,29 +1,25 @@
 import { Link } from "react-router";
 
 const links = [
-  {
-    title: "Fonctionnalités",
-    href: "#",
+{
+    name: "Accueil",
+    link: "/#hero",
   },
   {
-    title: "Solution",
-    href: "#",
+    name: "Services",
+    link: "/#what-we-offer",
   },
   {
-    title: "Clients",
-    href: "#",
+    name: "Projets",
+    link: "/#pourquoi-nous-choisir",
   },
   {
-    title: "Tarifs",
-    href: "#",
+    name: "À propos",
+    link: "/#a-propos",
   },
   {
-    title: "Aide",
-    href: "#",
-  },
-  {
-    title: "À propos",
-    href: "#",
+    name: "Contact",
+    link: "/#support",
   },
 ];
 
@@ -46,10 +42,10 @@ export default function Footer() {
           {links.map((link, index) => (
             <Link
               key={index}
-              to={link.href}
+              to={link.link}
               className="text-muted-foreground hover:text-primary block duration-150"
             >
-              <span>{link.title}</span>
+              <span>{link.name}</span>
             </Link>
           ))}
         </div>
