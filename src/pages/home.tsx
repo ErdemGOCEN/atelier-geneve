@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <WhatWeOffer />
       <WhoWeAre />
       <MemberShip />
-      <WhatWeOffer />
       <WhyChooseUs />
       <Support />
       <HowToOrder />

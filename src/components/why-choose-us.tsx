@@ -29,7 +29,7 @@ const specs = [
 export default function WhyChooseUs() {
   return (
     <section id="pourquoi-nous-choisir">
-      <div className="px-4 md:px-6 container mx-auto py-8 lg:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="px-4 md:px-6 container mx-auto py-8 lg:py-36 grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-6 text-center">
           <div className="space-y-4 text-center">
             <h2 className="text-5xl font-bold text-balance">
