@@ -49,7 +49,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+        {/* <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
           <Link
             to="#"
             target="_blank"
@@ -175,7 +175,7 @@ export default function Footer() {
               ></path>
             </svg>
           </Link>
-        </div>
+        </div> */}
         <span className="text-muted-foreground block text-center text-sm">
           {" "}
           © {new Date().getFullYear()} Atelier Genève, Tous droits réservés
