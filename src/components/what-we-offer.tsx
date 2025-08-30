@@ -1,15 +1,11 @@
 import {
-  Card,
-  CardContent,
+  
   CardFooter,
-  CardHeader,
-  CardTitle,
+  
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {
-  AppWindow,
-  Component,
-  DatabaseBackup,
+  
   Laptop,
   Monitor,
   ShieldCheck,
@@ -17,7 +13,6 @@ import {
   Wifi,
   HardDrive,
 } from "lucide-react";
-import { Link } from "react-router";
 import { buttonVariants } from "./ui/button";
 import { Check } from "lucide-react";
 

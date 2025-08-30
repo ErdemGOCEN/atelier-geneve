@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { Link } from "react-router";
 import { buttonVariants } from "@/components/ui/button";
 import Image from "@/components/ui/image-with-fallback";
 
