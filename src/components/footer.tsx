@@ -27,16 +27,20 @@ export default function Footer() {
   return (
     <footer className="py-16">
       <div className="mx-auto max-w-5xl px-6">
-        <Link
-          to="/"
-          aria-label="aller à l'accueil"
-          className="mx-auto size-fit flex items-center justify-center space-x-2 text-2xl font-bold text-center"
-        >
-          <div className="relative h-6 w-6 bg-black border text-white flex items-center justify-center rounded-md text-sm antialiased" />
-          <div className="flex flex-col">
-            <h1 className="font-sans">ATELIER GENÈVE</h1>
-          </div>
-        </Link>
+        <a
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}
+  aria-label="aller à l'accueil"
+  className="mx-auto size-fit flex items-center justify-center space-x-2 text-2xl font-bold text-center"
+>
+  <img src="/logo.png" alt="Logo" className="h-9 w-12" />
+  <div className="flex flex-col">
+    <h1 className="font-sans text-black">ATELIER GENÈVE</h1>
+  </div>
+</a>
 
         <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
           {links.map((link, index) => (
