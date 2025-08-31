@@ -61,7 +61,7 @@ const cards = [
 export default function Support() {
   return (
     <section id="support">
-      <div className="py-32 lg:py-48 bg-[url('/notch.webp')] bg-cover bg-no-repeat bg-center relative z-10">
+      <div className="py-32 lg:py-48 bg-[url('/notch.jpg')] bg-cover bg-no-repeat bg-center relative z-10">
         <div className="bg-gradient-to-b from-sky-blue/70 to-sky-blue/90 absolute inset-0 -z-1" />
 
         <div className="p-4 md:p-6 container mx-auto space-y-4 text-center lg:text-left">

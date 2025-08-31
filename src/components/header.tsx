@@ -82,7 +82,7 @@ export default function Header() {
               className="flex items-center justify-center space-x-2 text-2xl font-bold py-6 text-center text-neutral-600"
               href="/"
             >
-              <div className="relative h-6 w-6 bg-secondary border text-white flex items-center justify-center rounded-md text-sm antialiased" />
+              <img src="/logo.png" alt="ATELIER GENÈVE" className="h-9 w-12" />
               <div className="flex flex-col">
                 <h1 className="text-white font-sans">ATELIER GENÈVE</h1>
               </div>
@@ -109,7 +109,7 @@ export default function Header() {
             className="flex items-center justify-center space-x-2 text-2xl font-bold text-center text-neutral-600"
             href="/"
           >
-            <div className="relative h-6 w-6 bg-secondary border flex items-center justify-center rounded-md text-sm antialiased" />
+            <img src="/logo.png" alt="Logo" className="h-6 w-6" />
             <div className="flex flex-col">
               <h1 className="text-secondary font-sans">ATELIER GENÈVE</h1>
             </div>
