@@ -30,9 +30,10 @@ export default function WhyChooseUs() {
   return (
     <section id="pourquoi-nous-choisir">
       <div className="px-4 md:px-6 container mx-auto py-8 lg:py-36 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="space-y-6 text-center">
-          <div className="space-y-4 text-center">
-            <h2 className="text-5xl font-bold text-balance">
+        
+        <div className="space-y-6 text-center lg:text-left">
+          <div className="space-y-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
               Nous réparons tous les modèles de portables et ordinateurs
             </h2>
             <p className="text-muted-foreground text-balance">
@@ -43,25 +44,32 @@ export default function WhyChooseUs() {
           <div className="space-y-4">
             {specs.map((spec) => (
               <Card key={spec.id} className="shadow-lg">
-                <CardContent>
-                  <div className="flex gap-2">
+                <CardContent className="flex flex-col items-center text-center pt-6 pb-4 px-5 space-y-3">
+                  {/* İkon: Üstte, büyük değil ama net */}
+                  <div className="flex-shrink-0">
                     {spec.icon}
-                    <div className="space-y-2">
-                      <h4 className="text-xl font-semibold">{spec.title}</h4>
-                      <p className="text-muted-foreground">
-                        {spec.description}
-                      </p>
-                    </div>
                   </div>
+
+                  {/* Başlık: Ortalanmış */}
+                  <h4 className="text-xl font-semibold text-gray-800 leading-tight">
+                    {spec.title}
+                  </h4>
+
+                  {/* Açıklama: Ortalanmış, okunaklı */}
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {spec.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
+
+        {/* Görsel */}
         <div className="rounded-md overflow-hidden shadow-sm">
           <Image 
             src={"/why-choose-us.jpg"} 
-            alt="pourquoi choisir Atelier Genève" 
+            alt="Pourquoi choisir Atelier Genève" 
             className="w-full h-full object-cover"
           />
         </div>

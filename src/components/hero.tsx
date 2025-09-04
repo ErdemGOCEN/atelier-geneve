@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AppWindow, Network, ShieldCheck } from "lucide-react";
 import WhatsAppLink from "./whatsapp-link";
@@ -31,21 +30,29 @@ export default function Hero() {
   return (
     <section id="hero">
       <div className="py-24 lg:py-36 bg-[url('/repairman.jpg')] bg-cover bg-no-repeat bg-bottom relative z-10">
-        <div className="bg-gradient-to-b from-sky-blue/70 to-sky-blue/90 absolute inset-0 -z-1" />
+        {/* Arka plan gradyanı */}
+        <div className="bg-gradient-to-b from-sky-blue/70 to-sky-blue/90 absolute inset-0 -z-1"></div>
 
-        <div className="p-4 md:p-6 container mx-auto space-y-4 text-center lg:text-left">
-          <h1 className="text-white text-5xl lg:text-7xl font-bold text-balance lg:w-1/2 text-center lg:text-left z-10">
+        {/* İçerik */}
+        <div className="p-4 md:p-6 container mx-auto space-y-4">
+          {/* Başlık: Mobil orta, masaüstü sol */}
+          <h1 className="text-white text-5xl lg:text-7xl font-bold text-balance text-center lg:text-left">
             La solution intelligente pour réparer vos ordinateurs
           </h1>
 
-          <p className="text-sky-100 text-base lg:text-2xl font-semibold capitalize lg:w-1/3 text-center lg:text-left">
+          {/* Açıklama: Mobil orta, masaüstü sol (mx-auto kaldırıldı!) */}
+          <p className="text-sky-100 text-base lg:text-2xl font-semibold capitalize text-center lg:text-left lg:w-1/3">
             Atelier Genève : Votre expert en services informatiques pour particuliers et professionnels à Genève
           </p>
 
-          <WhatsAppLink title="Decouvrir Nos Services" />
+          {/* Buton: Mobilde orta, masaüstünde sol */}
+          <div className="flex justify-center lg:justify-start mt-4">
+            <WhatsAppLink title="Découvrir Nos Services" />
+          </div>
         </div>
 
-        <div className="container mx-auto hidden lg:grid lg:grid-cols-3 grid-cols-1 gap-4 absolute left-0 right-0 -bottom-[84px]">
+        {/* Masaüstü: Kartlar altta, absolute */}
+        <div className="container mx-auto hidden lg:grid lg:grid-cols-3 gap-4 absolute left-0 right-0 -bottom-[84px]">
           {cards.map((card) => (
             <Card key={card.id} className="shadow-2xl">
               <CardHeader className="text-center gap-4">
@@ -58,6 +65,7 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Mobil: Kartlar normal akışta */}
       <div className="container mx-auto grid lg:grid-cols-3 grid-cols-1 lg:hidden gap-4 p-4">
         {cards.map((card) => (
           <Card key={card.id} className="shadow-2xl">
