@@ -13,8 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 const navItems = [
   { name: "Accueil", link: "/#hero" },
   { name: "Services", link: "/#what-we-offer" },
-  { name: "Projets", link: "/#pourquoi-nous-choisir" },
   { name: "À propos", link: "/#a-propos" },
+  { name: "Projets", link: "/#pourquoi-nous-choisir" },
   { name: "Contact", link: "/#support" },
 ];
 
