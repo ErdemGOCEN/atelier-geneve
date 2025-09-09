@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 
+// Header ile aynı link yapısını kullanıyoruz
 const links = [
   {
     name: "Accueil",
@@ -10,12 +11,16 @@ const links = [
     link: "/#what-we-offer",
   },
   {
-    name: "Projets",
-    link: "/#pourquoi-nous-choisir",
+    name: "Tarifs",
+    link: "/#tarifs",
   },
   {
     name: "À propos",
     link: "/#a-propos",
+  },
+  {
+    name: "Pourquoi nous",
+    link: "/#pourquoi-nous-choisir",
   },
   {
     name: "Contact",
@@ -40,7 +45,7 @@ export default function Footer() {
           <img
             src="/logo.png"
             alt="Logo Atelier Genève"
-            className="h-10 w-auto" // Mobilde oran korunur, genişlik otomatik
+            className="h-10 w-auto"
           />
           <div className="flex flex-col">
             <h1 className="font-sans text-black text-lg font-bold">
@@ -49,8 +54,21 @@ export default function Footer() {
           </div>
         </a>
 
-        {/* Menü Linkleri */}
-        <div className="my-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm">
+        {/* Adres - Google Maps linki eklendi */}
+        <div className="my-6 flex justify-center">
+          <a 
+            href="https://www.google.com/maps/search/?api=1&query=Bd+du+Pont-d'Arve+40,+1205+Genève" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-muted-foreground text-sm flex items-center hover:text-primary transition-colors"
+          >
+            <span className="mr-2">📍</span>
+            Bd du Pont-d'Arve 40, 1205 Genève
+          </a>
+        </div>
+
+        {/* Menü Linkleri - Header ile aynı stile ve içerikle güncellendi */}
+        <div className="my-8 flex flex-wrap justify-center gap-x-8 gap-y-3 text-base font-bold">
           {links.map((link, index) => (
             <Link
               key={index}
@@ -68,7 +86,6 @@ export default function Footer() {
           <Link to="#" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter" className="text-muted-foreground hover:text-primary block p-1">
             <svg className="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"></path></svg>
           </Link>
-          [Diğer sosyal medya ikonları buraya]
         </div> */}
 
         {/* Telif Hakkı */}

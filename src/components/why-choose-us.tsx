@@ -1,3 +1,4 @@
+// components/why-choose-us/WhyChooseUs.tsx
 import Image from "@/components/ui/image-with-fallback";
 import { Card, CardContent } from "@/components/ui/card";
 import { IdCardLanyard, MessageSquareHeart, Puzzle } from "lucide-react";
@@ -34,8 +35,8 @@ export default function WhyChooseUs() {
         <div className="space-y-5 text-center lg:text-left">
           <div className="space-y-3">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-balance">
-  Pourquoi choisir Atelier Genève ?
-</h2>
+              Pourquoi choisir Atelier Genève ?
+            </h2>
             <p className="text-muted-foreground text-balance text-sm sm:text-base">
               Atelier Genève se distingue par son expertise technique, son service client exceptionnel et son engagement envers la qualité. Nous prenons soin de vos appareils comme s'ils étaient les nôtres.
             </p>
@@ -62,7 +63,8 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
-        <div className="rounded-md overflow-hidden shadow-sm">
+        {/* Resmi sadece lg ve üzeri ekranlarda göster, mobilde gizle. Gölge artırıldı. */}
+        <div className="rounded-md overflow-hidden shadow-md hidden lg:block"> 
           <Image 
             src={"/why-choose-us.jpg"} 
             alt="Pourquoi choisir Atelier Genève" 
