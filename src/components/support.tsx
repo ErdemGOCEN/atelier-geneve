@@ -21,10 +21,7 @@ const cards = [
       "Contactez notre équipe d'experts pour une évaluation gratuite de votre problème informatique. Obtenez des conseils professionnels et un devis sans engagement à Genève.",
     link: (
       <CardFooter className="justify-center">
-        
-          <WhatsAppLink />
-      
-        
+        <WhatsAppLink />
       </CardFooter>
     ),
   },
@@ -36,9 +33,7 @@ const cards = [
       "Envoyez-nous un ticket détaillé pour des problèmes complexes. Notre équipe traite votre demande rapidement et vous tient informé de l'avancement à chaque étape.",
     link: (
       <CardFooter className="justify-center">
-       
-          <WhatsAppLink />
-         
+        <WhatsAppLink />
       </CardFooter>
     ),
   },
@@ -50,9 +45,7 @@ const cards = [
       "Besoin d'une assistance immédiate ? Contactez directement notre service client. Notre équipe est disponible pour répondre à toutes vos questions techniques à Genève.",
     link: (
       <CardFooter className="justify-center">
-       
-          <WhatsAppLink  />
-        
+        <WhatsAppLink />
       </CardFooter>
     ),
   },
@@ -60,7 +53,10 @@ const cards = [
 
 export default function Support() {
   return (
-    <section id="support">
+    <section 
+      id="support" 
+      style={{ scrollMarginTop: '-4rem' }} // Negatif değerle yukarıdaki boşluğu azalttık
+    >
       <div className="py-32 lg:py-48 bg-[url('/notch.jpg')] bg-cover bg-no-repeat bg-center relative z-10">
         <div className="bg-gradient-to-b from-sky-blue/70 to-sky-blue/90 absolute inset-0 -z-1" />
 
@@ -97,9 +93,7 @@ export default function Support() {
             </CardHeader>
             <CardContent className="text-center">{card.content}</CardContent>
             <CardFooter className="justify-center">
-             
-                <WhatsAppLink />
-              
+              <WhatsAppLink />
             </CardFooter>
           </Card>
         ))}

@@ -12,15 +12,15 @@ const Tarifs: React.FC = () => {
     { service: "Demi-heure supplémentaire sur site", price: "40.- CHF" },
     { service: "Assistance à distance (30 minutes)", price: "30.- CHF" },
     { service: "Installation/Réinstallation Windows ou Mac", price: "100.- CHF" },
-    { service: "Installation et Configuration Antivirus", price: "40.- CHF" }, // Yeni eklenen
-    { service: "Mises à Jour Système & Logiciels", price: "50.- CHF" }, // Yeni eklenen
+    { service: "Installation et Configuration Antivirus", price: "40.- CHF" },
+    { service: "Mises à Jour Système & Logiciels", price: "50.- CHF" },
   ];
 
   return (
     <section 
       id="tarifs" 
       className="py-12 bg-gray-50" 
-      style={{ scrollMarginTop: '5rem' }}
+      style={{ scrollMarginTop: '4rem' }} // 5rem'den 4rem'e düşürüldü
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
