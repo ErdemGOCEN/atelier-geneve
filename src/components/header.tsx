@@ -15,7 +15,7 @@ const navItems = [
   { name: "Services", link: "/#what-we-offer" },
   { name: "Tarifs", link: "/#tarifs" },
   { name: "À propos", link: "/#a-propos" },
-  { name: "Pourquoi nous", link: "/#pourquoi-nous-choisir" }, // "Projets" → "Pourquoi nous"
+  { name: "Pourquoi nous", link: "/#pourquoi-nous-choisir" },
   { name: "Contact", link: "/#support" },
 ];
 
@@ -96,7 +96,7 @@ export default function Header() {
               className="h-10 w-auto"
             />
             <div className="flex flex-col">
-              <h1 className="font-sans text-lg font-bold">ATELIER GENÈVE</h1>
+              <h1 className="font-sans text-xl font-bold">ATELIER GENÈVE</h1> {/* text-lg → text-xl */}
             </div>
           </a>
 
@@ -105,7 +105,7 @@ export default function Header() {
               <Link
                 key={item.link}
                 to={item.link}
-                className="text-white hover:text-primary transition-colors text-sm font-medium"
+                className="text-white hover:text-primary transition-colors text-base font-bold" // text-sm → text-base
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -128,7 +128,7 @@ export default function Header() {
               className="h-9 w-auto"
             />
             <div className="flex flex-col">
-              <h1 className="font-sans text-base font-bold">ATELIER GENÈVE</h1>
+              <h1 className="font-sans text-lg font-bold">ATELIER GENÈVE</h1> {/* text-base → text-lg */}
             </div>
           </a>
 
@@ -156,8 +156,8 @@ export default function Header() {
                         px-6 py-5 
                         space-y-4 
                         text-center 
-                        text-lg 
-                        font-medium
+                        text-xl // text-lg → text-xl
+                        font-bold
                         shadow-xl
                         max-w-5xl 
                         mx-auto"
@@ -173,7 +173,8 @@ export default function Header() {
                             duration-200 
                             py-3 
                             px-5 
-                            rounded-md"
+                            rounded-md
+                            font-bold"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
