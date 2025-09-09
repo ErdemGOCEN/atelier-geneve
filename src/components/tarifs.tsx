@@ -27,7 +27,7 @@ const Tarifs: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Nos Tarifs
           </h1>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+        
         </div>
         
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
