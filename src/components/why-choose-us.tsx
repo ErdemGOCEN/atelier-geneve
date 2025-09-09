@@ -33,9 +33,9 @@ export default function WhyChooseUs() {
         
         <div className="space-y-5 text-center lg:text-left">
           <div className="space-y-3">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">
-              Nous réparons tous les modèles de portables et ordinateurs
-            </h2>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-balance">
+  Pourquoi choisir Atelier Genève ?
+</h2>
             <p className="text-muted-foreground text-balance text-sm sm:text-base">
               Atelier Genève se distingue par son expertise technique, son service client exceptionnel et son engagement envers la qualité. Nous prenons soin de vos appareils comme s'ils étaient les nôtres.
             </p>

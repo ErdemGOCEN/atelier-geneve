@@ -13,9 +13,9 @@ gsap.registerPlugin(ScrollTrigger);
 const navItems = [
   { name: "Accueil", link: "/#hero" },
   { name: "Services", link: "/#what-we-offer" },
-  { name: "Tarifs", link: "/#tarifs" }, // Burada #tarifs olarak güncellendi
+  { name: "Tarifs", link: "/#tarifs" },
   { name: "À propos", link: "/#a-propos" },
-  { name: "Projets", link: "/#pourquoi-nous-choisir" },
+  { name: "Pourquoi nous", link: "/#pourquoi-nous-choisir" }, // "Projets" → "Pourquoi nous"
   { name: "Contact", link: "/#support" },
 ];
 
