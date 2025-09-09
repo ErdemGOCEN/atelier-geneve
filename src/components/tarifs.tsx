@@ -8,8 +8,8 @@ interface TarifItem {
 
 const Tarifs: React.FC = () => {
   const tariffs: TarifItem[] = [
-    { service: "Première heure de réparation sur site", price: "80.- CHF" },
-    { service: "Demi-heure supplémentaire sur site", price: "40.- CHF" },
+    { service: "Première heure de réparation", price: "80.- CHF" },
+    { service: "Demi-heure supplémentaire", price: "40.- CHF" },
     { service: "Assistance à distance (30 minutes)", price: "30.- CHF" },
     { service: "Installation/Réinstallation Windows ou Mac", price: "100.- CHF" },
     { service: "Installation et Configuration Antivirus", price: "40.- CHF" },
