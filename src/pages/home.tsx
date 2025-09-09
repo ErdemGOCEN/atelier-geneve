@@ -6,12 +6,14 @@ import Testimonials from "@/components/testimonials";
 import WhatWeOffer from "@/components/what-we-offer";
 import WhoWeAre from "@/components/who-we-are";
 import WhyChooseUs from "@/components/why-choose-us";
+import Tarifs from "@/components/tarifs"; // Yeni bileşen
 
 export default function Home() {
   return (
     <>
       <Hero />
       <WhatWeOffer />
+      <Tarifs /> 
       <WhoWeAre />
       <MemberShip />
       <WhyChooseUs />

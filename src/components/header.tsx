@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const navItems = [
   { name: "Accueil", link: "/#hero" },
   { name: "Services", link: "/#what-we-offer" },
+  { name: "Tarifs", link: "/#tarifs" }, // Burada #tarifs olarak güncellendi
   { name: "À propos", link: "/#a-propos" },
   { name: "Projets", link: "/#pourquoi-nous-choisir" },
   { name: "Contact", link: "/#support" },
@@ -20,7 +21,7 @@ const navItems = [
 
 export default function Header() {
   const headerRef = useRef<HTMLHeadingElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null); // Menü içi
+  const menuRef = useRef<HTMLDivElement>(null);
   const animation = useRef<gsap.core.Timeline | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -54,7 +55,7 @@ export default function Header() {
     { scope: headerRef }
   );
 
-  // Boşluğa tıklayınca menüyü kapat (mousedown + touchstart)
+  // Boşluğa tıklayınca menüyü kapat
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent | TouchEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
