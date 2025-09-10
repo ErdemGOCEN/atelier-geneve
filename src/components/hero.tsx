@@ -29,7 +29,7 @@ const cards = [
 
 export default function Hero() {
   return (
-    <section id="hero">
+    <section id="accueil">
       <div className="py-20 sm:py-24 lg:py-36 bg-[url('/repairman.jpg')] bg-cover bg-no-repeat bg-bottom relative z-10">
         {/* Arka plan gradyanı */}
         <div className="bg-gradient-to-b from-sky-blue/70 to-sky-blue/90 absolute inset-0 -z-1"></div>
@@ -53,7 +53,7 @@ export default function Hero() {
         </div>
 
         {/* Masaüstü: Kartlar altta, absolute */}
-        <div className="container mx-auto hidden lg:grid lg:grid-cols-3 gap-4 absolute left-0 right-0 -bottom-[84px]">
+        <div className="container px-6 mx-auto hidden lg:grid lg:grid-cols-3 gap-4 absolute left-0 right-0 -bottom-[84px]">
           {cards.map((card) => (
             <Card key={card.id} className="shadow-2xl">
               <CardHeader className="text-center gap-3 sm:gap-4">

@@ -29,7 +29,7 @@ const specs = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="pourquoi-nous-choisir" className="py-12 lg:py-20"> 
+    <section id="pourquoi-nous-choisir" className="py-12 lg:py-36"> 
       {/* pt-8 veya pt-12 eklendi */}
       <div className="px-4 md:px-6 container mx-auto pt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
         

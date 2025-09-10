@@ -54,7 +54,7 @@ const cards = [
 export default function Support() {
   return (
     <section 
-      id="support" 
+      id="contact" 
       style={{ scrollMarginTop: '-4rem' }} // Negatif değerle yukarıdaki boşluğu azalttık
     >
       <div className="py-32 lg:py-48 bg-[url('/notch.jpg')] bg-cover bg-no-repeat bg-center relative z-10">
@@ -70,7 +70,7 @@ export default function Support() {
           </p>
         </div>
 
-        <div className="container mx-auto hidden lg:grid lg:grid-cols-3 grid-cols-1 gap-4 absolute left-0 right-0 -bottom-[84px]">
+        <div className="container px-6 mx-auto hidden lg:grid lg:grid-cols-3 grid-cols-1 gap-4 absolute left-0 right-0 -bottom-[84px]">
           {cards.map((card) => (
             <Card key={card.id} className="shadow-2xl">
               <CardHeader className="text-center gap-4">

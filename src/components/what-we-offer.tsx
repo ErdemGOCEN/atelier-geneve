@@ -90,7 +90,7 @@ const allServices = [
 export default function WhatWeOffer() {
   return (
     <section 
-      id="what-we-offer"
+      id="services"
       aria-labelledby="services-heading"
     >
       <div className="px-4 md:px-6 container mx-auto py-8 sm:py-12 lg:pt-24 lg:pb-12">

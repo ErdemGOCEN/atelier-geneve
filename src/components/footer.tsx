@@ -4,11 +4,11 @@ import { Link } from "react-router";
 const links = [
   {
     name: "Accueil",
-    link: "/#hero",
+    link: "/#accueil",
   },
   {
     name: "Services",
-    link: "/#what-we-offer",
+    link: "/#services",
   },
   {
     name: "Tarifs",
@@ -24,7 +24,7 @@ const links = [
   },
   {
     name: "Contact",
-    link: "/#support",
+    link: "/#contact",
   },
 ];
 
