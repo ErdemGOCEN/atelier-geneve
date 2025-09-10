@@ -8,26 +8,27 @@ interface TarifItem {
 
 const Tarifs: React.FC = () => {
   const tariffs: TarifItem[] = [
-    { service: "Première heure de réparation", price: "80.- CHF" },
-    { service: "Demi-heure supplémentaire", price: "40.- CHF" },
-    { service: "Assistance à distance (30 minutes)", price: "30.- CHF" },
-    { service: "Installation/Réinstallation Windows ou Mac", price: "100.- CHF" },
-    { service: "Installation et Configuration Antivirus", price: "40.- CHF" },
-    { service: "Mises à Jour Système & Logiciels", price: "50.- CHF" },
+    { service: "Première heure de réparation", price: "80 CHF" },
+    { service: "Demi-heure supplémentaire", price: "40 CHF" },
+    { service: "Assistance à distance (30 minutes)", price: "30 CHF" },
+    { service: "Installation/Réinstallation Windows ou Mac", price: "100 CHF" },
+    { service: "Installation et Configuration Antivirus", price: "40 CHF" },
+    { service: "Mises à Jour Système & Logiciels", price: "50 CHF" },
   ];
 
   return (
+    // bg-gray-50 kaldırıldı, py-12 azaltıldı ve pt-8 eklendi (sadece üst boşluk)
     <section 
       id="tarifs" 
-      className="py-12 bg-gray-50" 
-      style={{ scrollMarginTop: '4rem' }} // 5rem'den 4rem'e düşürüldü
+      className="pt-8" 
+      style={{ scrollMarginTop: '4rem' }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 eklendi (alt boşluk için) */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Nos Tarifs
           </h1>
-        
         </div>
         
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">

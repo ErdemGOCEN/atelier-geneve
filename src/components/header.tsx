@@ -84,28 +84,30 @@ export default function Header() {
       ref={headerRef}
     >
       {/* Masaüstü Menü (lg ve üzeri) */}
-      <div className="hidden lg:block">
-        <div className="mx-auto flex h-16 max-w-5xl items-center px-6">
-          <a
-            href="/"
-            className="mr-8 flex items-center space-x-3 text-white"
-          >
-            <img
-              src="/logo.png"
-              alt="ATELIER GENÈVE - Design d'intérieur à Genève"
-              className="h-10 w-auto"
-            />
-            <div className="flex flex-col">
-              <h1 className="font-sans text-xl font-bold">ATELIER GENÈVE</h1> {/* text-lg → text-xl */}
-            </div>
-          </a>
+      {/* max-w-5xl container'ı kaldırıldı, içerik doğrudan px-6 padding'i ile genişletildi */}
+      <div className="hidden lg:block px-6"> 
+        <div className="flex h-16 items-center justify-between"> {/* mx-auto ve max-w-5xl kaldırıldı */}
+          {/* Sol taraf: Logo ve Site Adı */}
+          <div className="flex items-center space-x-3 text-white">
+            <a href="/" className="flex items-center space-x-3 text-white">
+              <img
+                src="/logo.png"
+                alt="ATELIER GENÈVE - Dépannage informatique à Genève"
+                className="h-10 w-auto"
+              />
+              <div className="flex flex-col">
+                <h1 className="font-sans text-xl font-bold">ATELIER GENÈVE</h1>
+              </div>
+            </a>
+          </div>
 
-          <nav className="ml-auto flex items-center gap-8">
+          {/* Sağ taraf: Menü Linkleri */}
+          <nav className="flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.link}
                 to={item.link}
-                className="text-white hover:text-primary transition-colors text-base font-bold" // text-sm → text-base
+                className="text-white hover:text-primary transition-colors text-base font-bold whitespace-nowrap" // whitespace-nowrap eklendi
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -115,7 +117,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobil Menü (lg altı) */}
+      {/* Mobil Menü (lg altı) - Değişiklik yok */}
       <div className="block lg:hidden">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
           <a
@@ -124,11 +126,11 @@ export default function Header() {
           >
             <img
               src="/logo.png"
-              alt="ATELIER GENÈVE - Design d'intérieur à Genève"
+              alt="ATELIER GENÈVE - Dépannage informatique à Genève"
               className="h-9 w-auto"
             />
             <div className="flex flex-col">
-              <h1 className="font-sans text-lg font-bold">ATELIER GENÈVE</h1> {/* text-base → text-lg */}
+              <h1 className="font-sans text-lg font-bold">ATELIER GENÈVE</h1>
             </div>
           </a>
 
@@ -156,7 +158,7 @@ export default function Header() {
                         px-6 py-5 
                         space-y-4 
                         text-center 
-                        text-xl // text-lg → text-xl
+                        text-xl
                         font-bold
                         shadow-xl
                         max-w-5xl 
