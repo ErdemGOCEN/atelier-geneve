@@ -18,7 +18,7 @@ const cards = [
     icon: <MessageSquare className="mx-auto size-10 text-sky-blue" />,
     title: "Consultation Gratuite",
     content:
-      "Contactez notre équipe d'experts pour une évaluation gratuite de votre problème informatique. Obtenez des conseils professionnels et un devis sans engagement à Genève.",
+      "Contactez nos experts pour une évaluation gratuite de votre problème informatique à Genève. Obtenez des conseils professionnels et un devis sans engagement.",
     link: (
       <CardFooter className="justify-center">
         <WhatsAppLink />
@@ -55,14 +55,14 @@ export default function Support() {
   return (
     <section 
       id="contact" 
-      style={{ scrollMarginTop: '-4rem' }} // Negatif değerle yukarıdaki boşluğu azalttık
+      style={{ scrollMarginTop: '-4rem' }}
     >
       <div className="py-32 lg:py-48 bg-[url('/notch.jpg')] bg-cover bg-no-repeat bg-center relative z-10">
         <div className="bg-gradient-to-b from-sky-blue/70 to-sky-blue/90 absolute inset-0 -z-1" />
 
         <div className="p-4 md:p-6 container mx-auto space-y-4 text-center lg:text-left">
           <h1 className="text-white text-5xl lg:text-7xl font-bold text-balance lg:w-1/2 text-center lg:text-left z-10">
-            Des services de réparation informatique de qualité supérieure à Genève
+            Les réparations informatiques les moins chères de Genève
           </h1>
 
           <p className="text-sky-100 font-semibold lg:w-1/3 text-center lg:text-left">
@@ -70,7 +70,8 @@ export default function Support() {
           </p>
         </div>
 
-        <div className="container px-6 mx-auto hidden lg:grid lg:grid-cols-3 grid-cols-1 gap-4 absolute left-0 right-0 -bottom-[84px]">
+        {/* Kartlar - Absolute pozisyonlu, ama daha yukarıda */}
+        <div className="container px-6 mx-auto hidden lg:grid lg:grid-cols-3 grid-cols-1 gap-3 absolute left-0 right-0 -bottom-[120px]"> {/* -bottom-[120px] → daha fazla mesafe */}
           {cards.map((card) => (
             <Card key={card.id} className="shadow-2xl">
               <CardHeader className="text-center gap-4">
@@ -84,6 +85,7 @@ export default function Support() {
         </div>
       </div>
 
+      {/* Mobil versiyon için kartlar - Normal akışta */}
       <div className="container mx-auto grid lg:grid-cols-3 grid-cols-1 lg:hidden gap-4 p-4">
         {cards.map((card) => (
           <Card key={card.id} className="shadow-2xl">
