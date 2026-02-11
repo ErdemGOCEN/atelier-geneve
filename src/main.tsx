@@ -41,7 +41,7 @@ createRoot(document.getElementById("root")!).render(
 function Gatherer() {
   return (
     <div className="grid place-items-center space-y-3">
-      <p>Yükleniyor...</p>
+      <p>Chargement en cours...</p>
     </div>
   );
 }
