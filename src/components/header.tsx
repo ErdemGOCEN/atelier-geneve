@@ -1,4 +1,4 @@
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Link } from "react-router";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -77,26 +77,19 @@ export default function Header() {
   return (
     <header
       className="fixed top-0 z-50 w-full transition-all duration-300"
-      // style={{
-      //   backgroundColor: "transparent",
-      //   backdropFilter: "blur(0px)",
-      // }}
       ref={headerRef}
     >
       {/* Masaüstü Menü (lg ve üzeri) */}
       <div className="hidden lg:block">
         <div className="mx-auto flex h-16 container items-center px-6">
-          <a
-            href="/"
-            className="mr-8 flex items-center space-x-3 text-white"
-          >
+          <a href="/" className="mr-8 flex items-center space-x-3 text-white">
             <img
               src="/logo.png"
               alt="ATELIER GENÈVE - Design d'intérieur à Genève"
               className="h-10 w-auto"
             />
             <div className="flex flex-col">
-              <h1 className="font-sans text-xl font-bold">ATELIER GENÈVE</h1> {/* text-lg → text-xl */}
+              <h1 className="font-sans text-xl font-bold">ATELIER GENÈVE</h1>
             </div>
           </a>
 
@@ -105,12 +98,21 @@ export default function Header() {
               <Link
                 key={item.link}
                 to={item.link}
-                className="text-white hover:text-primary transition-colors text-base font-bold" // text-sm → text-base
+                className="text-white hover:text-primary transition-colors text-base font-bold"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+
+            {/* TELEFON CTA (Desktop) */}
+            <a
+              href="tel:+41772094090"
+              className="ml-4 flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full font-bold hover:scale-105 transition"
+            >
+              <Phone size={18} />
+              APPEL +41 77 209 40 90
+            </a>
           </nav>
         </div>
       </div>
@@ -118,17 +120,14 @@ export default function Header() {
       {/* Mobil Menü (lg altı) */}
       <div className="block lg:hidden">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-          <a
-            href="/"
-            className="flex items-center space-x-3 text-white"
-          >
+          <a href="/" className="flex items-center space-x-3 text-white">
             <img
               src="/logo.png"
               alt="ATELIER GENÈVE - Design d'intérieur à Genève"
               className="h-9 w-auto"
             />
             <div className="flex flex-col">
-              <h1 className="font-sans text-lg font-bold">ATELIER GENÈVE</h1> {/* text-base → text-lg */}
+              <h1 className="font-sans text-lg font-bold">ATELIER GENÈVE</h1>
             </div>
           </a>
 
@@ -156,12 +155,24 @@ export default function Header() {
                         px-6 py-5 
                         space-y-4 
                         text-center 
-                        text-xl // text-lg → text-xl
+                        text-xl
                         font-bold
                         shadow-xl
                         max-w-5xl 
                         mx-auto"
             >
+              {/* TELEFON CTA (Mobile) */}
+              <a
+                href="tel:+41772094090"
+                className="flex items-center justify-center gap-3 
+                           bg-primary text-white py-3 rounded-full 
+                           font-bold text-lg mb-3"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Phone size={20} />
+                APPEL +41 77 209 40 90
+              </a>
+
               {navItems.map((item) => (
                 <Link
                   key={item.link}

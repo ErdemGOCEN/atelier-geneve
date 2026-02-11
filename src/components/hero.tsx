@@ -42,9 +42,10 @@ export default function Hero() {
           </h1>
 
           {/* Açıklama: Mobil orta, masaüstü sol */}
-          <p className="text-sky-100 text-base sm:text-lg lg:text-xl xl:text-2xl font-semibold capitalize text-center lg:text-left max-w-3xl lg:w-1/2">
-            Atelier Genève : Votre expert en services informatiques pour particuliers et professionnels à Genève
-          </p>
+          <p className="text-sky-100 text-base sm:text-lg lg:text-xl xl:text-2xl font-semibold text-center lg:text-left max-w-3xl lg:w-1/2">
+  Atelier Genève : Votre expert en services informatiques pour particuliers et professionnels à Genève
+</p>
+
 
           {/* Buton: Mobilde orta, masaüstünde sol */}
           <div className="flex justify-center lg:justify-start mt-4">
