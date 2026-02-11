@@ -45,7 +45,7 @@ export default function Footer() {
               href="tel:+41772094090"
               className="text-primary font-bold hover:scale-105 transition"
             >
-              📞 077 209 40 90
+              📞 +41 77 209 40 90
             </a>
           </div>
         </div>
