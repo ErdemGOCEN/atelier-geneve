@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Alt Kısım - mt-12'den mt-8'e çekildi */}
+        {/* Alt Kısım - mt-12'den mt-8'e çekildi son olarak*/}
         <div className="mt-8 pt-4 border-t border-slate-200 text-center">
           <p className="text-[10px] text-muted-foreground">
             © {new Date().getFullYear()} Atelier Genève. Service professionnel de dépannage informatique.
