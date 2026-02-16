@@ -1,161 +1,109 @@
+import { CardFooter } from "@/components/ui/card";
 import {
-  CardFooter,
-} from "@/components/ui/card";
-import {
-  Laptop,
-  Monitor,
-  ShieldCheck,
-  RefreshCw,
-  Wifi,
-  HardDrive,
+  Laptop, Monitor, ShieldCheck, RefreshCw, Wifi, HardDrive, Check,
 } from "lucide-react";
-import { Check } from "lucide-react";
 import WhatsAppLink from "./whatsapp-link";
 
 const allServices = [
   {
     id: "1",
-    icon: <Monitor className="mx-auto size-8 sm:size-10 text-white" />,
-    title: "Installation Système d'Exploitation",
-    description: "Installation complète de Windows, macOS ou Linux sur votre ordinateur.",
-    features: [
-      "Installation de Windows 10/11",
-      "Installation de macOS (sur Mac compatible)",
-      "Installation de distributions Linux (Ubuntu, Fedora, etc.)",
-      "Configuration initiale du système"
-    ]
+    icon: <Monitor className="mx-auto size-8 text-white" aria-hidden="true" />,
+    title: "Système OS",
+    description: "Installation complète de Windows, macOS ou Linux.",
+    features: ["Windows 10/11", "macOS Apple", "Distros Linux", "Config initiale"]
   },
   {
     id: "2",
-    icon: <ShieldCheck className="mx-auto size-8 sm:size-10 text-white" />,
-    title: "Installation et Configuration Antivirus",
-    description: "Protection de votre système contre les logiciels malveillants.",
-    features: [
-      "Installation d'antivirus performant",
-      "Configuration des paramètres de sécurité",
-      "Mise à jour des bases de données virales",
-      "Analyse initiale complète du système"
-    ]
+    icon: <ShieldCheck className="mx-auto size-8 text-white" aria-hidden="true" />,
+    title: "Sécurité & Antivirus",
+    description: "Protection complète contre les logiciels malveillants.",
+    features: ["Antivirus", "Config sécurité", "Mises à jour", "Analyse système"]
   },
   {
     id: "3",
-    icon: <RefreshCw className="mx-auto size-8 sm:size-10 text-white" />,
-    title: "Mises à Jour Système & Logiciels",
-    description: "Gardez votre système et vos logiciels à jour pour plus de sécurité et de performance.",
-    features: [
-      "Mise à jour du système d'exploitation",
-      "Mise à jour des logiciels installés",
-      "Installation des derniers correctifs de sécurité",
-      "Optimisation post-mise à jour"
-    ]
+    icon: <RefreshCw className="mx-auto size-8 text-white" aria-hidden="true" />,
+    title: "Maintenance",
+    description: "Optimisation et mises à jour logicielles complètes.",
+    features: ["Mise à jour OS", "Logiciels tiers", "Patchs", "Performance"]
   },
   {
     id: "4",
-    icon: <Laptop className="mx-auto size-8 sm:size-10 text-white" />,
-    title: "Réparation d'Ordinateurs",
-    description: "Diagnostic et réparation de vos ordinateurs (PC & Mac) en cas de panne.",
-    features: [
-      "Diagnostic matériel et logiciel",
-      "Réparation ou remplacement de composants",
-      "Récupération de données (si possible)",
-      "Tests de performance post-réparation"
-    ]
+    icon: <Laptop className="mx-auto size-8 text-white" aria-hidden="true" />,
+    title: "Réparation PC/Mac",
+    description: "Diagnostic et réparation matérielle rapide à Genève.",
+    features: ["Hardware", "SSD/RAM Upgrade", "Récupération", "Tests"]
   },
   {
     id: "5",
-    icon: <HardDrive className="mx-auto size-8 sm:size-10 text-white" />,
-    title: "Récupération de Données",
-    description: "Récupération sécurisée de vos données perdues ou supprimées.",
-    features: [
-      "Récupération à partir de disques durs endommagés",
-      "Récupération de fichiers supprimés",
-      "Service de sauvegarde de données",
-      "Cryptage sécurisé des données"
-    ]
+    icon: <HardDrive className="mx-auto size-8 text-white" aria-hidden="true" />,
+    title: "Données",
+    description: "Récupération de fichiers supprimés ou perdus.",
+    features: ["Disques durs", "Suppression", "Sauvegarde", "Cryptage"]
   },
   {
     id: "6",
-    icon: <Wifi className="mx-auto size-8 sm:size-10 text-white" />,
-    title: "Configuration Réseau & Internet",
-    description: "Configuration de votre réseau local et connexion internet.",
-    features: [
-      "Configuration de routeurs et modems",
-      "Installation de réseau Wi-Fi sécurisé",
-      "Dépannage de connexion internet",
-      "Partage de ressources réseau"
-    ]
+    icon: <Wifi className="mx-auto size-8 text-white" aria-hidden="true" />,
+    title: "Réseau & Wi-Fi",
+    description: "Configuration réseau et internet haute performance.",
+    features: ["Routeurs & Box", "Wi-Fi sécurisé", "Dépannage", "Ressources"]
   }
 ];
 
 export default function WhatWeOffer() {
   return (
-    <section 
-      id="services"
-      aria-labelledby="services-heading"
-    >
-      <div className="px-4 md:px-6 container mx-auto py-8 sm:py-12 lg:pt-24 lg:pb-12">
-        {/* Hero Section */}
-        <div className="text-center pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-12">
-          <div>
-            <h2 
-              id="services-heading"
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6"
-            >
-              Nos <span className="text-sky-blue">Services Informatiques</span> à Genève
-            </h2>
-            <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto px-2">
-              Des solutions informatiques rapides et fiables pour particuliers et professionnels à Genève
-            </p>
-          </div>
+    <section id="services" className="bg-slate-50/50 pt-20 pb-16 lg:pt-28 lg:pb-20">
+      <div className="px-4 container mx-auto">
+        
+        {/* Header - Üst boşluk pt-20/28 ile artırıldı */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+            Nos <span className="text-sky-blue">Services</span> à Genève
+          </h2>
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+            Expertise informatique rapide, certifiée et garantie pour tous vos appareils.
+          </p>
         </div>
 
-        {/* Tous les Services */}
-        <div className="mb-8 sm:mb-12">
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {allServices.map((service) => (
-              <article
-                key={service.id}
-                className="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full"
-                itemScope
-                itemType="http://schema.org/Service"
-              >
-                <div className="bg-gradient-to-r from-sky-blue to-blue-600 p-4 text-white flex-shrink-0 h-32 sm:h-36 flex flex-col justify-center items-center">
-                  <div className="flex justify-center mb-2">
-                    {service.icon}
-                  </div>
-                  <h3 
-                    className="text-base sm:text-lg font-bold mb-1 text-center leading-tight"
-                    itemProp="name"
-                  >
-                    {service.title}
-                  </h3>
+        {/* Kartlar */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
+          {allServices.map((service) => (
+            <article
+              key={service.id}
+              className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full w-full max-w-[390px] border border-slate-100 overflow-hidden"
+            >
+              <div className="bg-gradient-to-br from-sky-blue via-blue-600 to-blue-700 p-4 text-white flex-shrink-0 h-24 flex flex-col justify-center items-center">
+                <div className="mb-1.5 transform group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
                 </div>
-                <div className="p-4 sm:p-5 flex-grow flex flex-col">
-                  <p 
-                    className="text-xs sm:text-sm text-gray-600 mb-3 text-center"
-                    itemProp="description"
-                  >
-                    {service.description}
-                  </p>
-                  <ul className="space-y-2 flex-grow mb-4">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <div className="flex-shrink-0 h-4 w-4 text-green-500 mt-0.5 mr-2">
-                          <Check className="h-4 w-4" />
-                        </div>
-                        <span className="text-gray-700 text-xs sm:text-sm">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <CardFooter className="justify-center p-0">
-                    <WhatsAppLink />
-                  </CardFooter>
-                </div>
-              </article>
-            ))}
-          </div>
+                <h3 className="text-base sm:text-lg font-bold text-center leading-tight uppercase tracking-wide">
+                  {service.title}
+                </h3>
+              </div>
+
+              <div className="p-5 flex-grow flex flex-col">
+                <p className="text-[13px] text-slate-500 mb-4 text-center italic leading-tight h-[1.2rem] line-clamp-1">
+                  {service.description}
+                </p>
+
+                <ul className="space-y-2 mb-5 flex-grow">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-[13px] text-slate-700">
+                      <div className="bg-green-100 rounded-full p-0.5 mr-2.5 flex-shrink-0">
+                        <Check className="h-3.5 w-3.5 text-green-600" strokeWidth={3} />
+                      </div>
+                      <span className="font-medium truncate">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <CardFooter className="p-0 pt-4 border-t border-slate-50 flex justify-center">
+                   <div className="w-full flex justify-center transform group-hover:scale-105 transition-transform">
+                      <WhatsAppLink />
+                   </div>
+                </CardFooter>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

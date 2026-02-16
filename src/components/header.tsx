@@ -5,11 +5,8 @@ import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import { useRef, useState, useEffect } from "react";
 
-// GSAP eklentilerini kaydet
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-// Menü öğeleri
 const navItems = [
   { name: "Accueil", link: "/#accueil" },
   { name: "Services", link: "/#services" },
@@ -20,54 +17,40 @@ const navItems = [
 ];
 
 export default function Header() {
-  const headerRef = useRef<HTMLHeadingElement>(null);
+  const headerRef = useRef<HTMLElement>(null); // Tip düzeltildi: HTMLElement
   const menuRef = useRef<HTMLDivElement>(null);
-  const animation = useRef<gsap.core.Timeline | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // GSAP Scroll Efekti
-  useGSAP(
-    () => {
-      const header = headerRef.current;
-      if (!header) return;
+  // GSAP Scroll Efekti - Daha akıcı hale getirildi
+  useGSAP(() => {
+    const header = headerRef.current;
+    if (!header) return;
 
-      const headerHeight = header.offsetHeight;
+    gsap.to(header, {
+      scrollTrigger: {
+        trigger: "body",
+        start: "top -50", // Biraz kaydırınca başlasın
+        end: "top -200",
+        scrub: true,
+      },
+      backgroundColor: "rgba(0, 0, 0, 0.7)", // 0.3 çok şeffaf kalabilir, okunurluk için artırıldı
+      backdropFilter: "blur(12px)",
+      height: "60px", // Scroll olunca biraz daralması modern bir dokunuştur
+      duration: 0.3
+    });
+  }, { scope: headerRef });
 
-      if (animation.current) animation.current.kill();
-      animation.current = gsap.timeline({
-        scrollTrigger: {
-          trigger: document.body,
-          start: "top top",
-          end: `+=${headerHeight}`,
-          scrub: 1,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            gsap.to(header, {
-              backgroundColor: `rgba(0, 0, 0, ${progress * 0.3})`,
-              backdropFilter: `blur(${progress * 10}px)`,
-              duration: 0.1,
-              ease: "power2.out",
-            });
-          },
-        },
-      });
-    },
-    { scope: headerRef }
-  );
-
-  // Boşluğa tıklayınca menüyü kapat
+  // Dışarı tıklayınca kapatma
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent | TouchEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setIsMenuOpen(false);
       }
     };
-
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
       document.addEventListener("touchstart", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
@@ -76,125 +59,93 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 z-50 w-full transition-all duration-300"
+      className="fixed top-0 z-50 w-full transition-all duration-300 flex items-center"
       ref={headerRef}
+      style={{ height: "72px" }} // İlk yükseklik
     >
-      {/* Masaüstü Menü (lg ve üzeri) */}
-      <div className="hidden lg:block">
-        <div className="mx-auto flex h-16 container items-center px-6">
-          <a href="/" className="mr-8 flex items-center space-x-3 text-white">
-            <img
-              src="/logo.png"
-              alt="ATELIER GENÈVE - Design d'intérieur à Genève"
-              className="h-10 w-auto"
-            />
-            <div className="flex flex-col">
-              <h1 className="font-sans text-xl font-bold">ATELIER GENÈVE</h1>
-            </div>
-          </a>
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6">
+        
+        {/* LOGO ALANI */}
+        <Link to="/" className="flex items-center space-x-3 text-white group">
+          <img
+            src="/logo.png"
+            // SEO DÜZELTMESİ: İç mimarlık değil, Bilgisayar Tamiri olmalı!
+            alt="Atelier Genève - Dépannage Informatique et Réparation PC/Mac"
+            className="h-10 w-auto transition-transform group-hover:scale-105"
+          />
+          <div className="flex flex-col">
+            {/* SEO: Footer'da span yapmıştık, burada h1 durabilir ama sayfada başka h1 yoksa! */}
+            <span className="font-sans text-xl font-black tracking-tight">ATELIER GENÈVE</span>
+          </div>
+        </Link>
 
-          <nav className="ml-auto flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.link}
-                to={item.link}
-                className="text-white hover:text-primary transition-colors text-base font-bold"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-
-            {/* TELEFON CTA (Desktop) */}
-            <a
-              href="tel:+41772094090"
-              className="ml-4 flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full font-bold hover:scale-105 transition"
+        {/* MASAÜSTÜ NAVİGASYON */}
+        <nav className="hidden lg:flex items-center gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.link}
+              to={item.link}
+              className="text-white/90 hover:text-white transition-colors text-sm font-bold uppercase tracking-wide"
             >
-              <Phone size={18} />
-              APPEL +41 77 209 40 90
-            </a>
-          </nav>
-        </div>
+              {item.name}
+            </Link>
+          ))}
+
+          <a
+            href="tel:+41772094090"
+            className="ml-4 flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full font-bold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg"
+          >
+            <Phone size={16} />
+            077 209 40 90
+          </a>
+        </nav>
+
+        {/* MOBİL TETİKLEYİCİ */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="lg:hidden text-white p-2"
+          aria-label="Menu"
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
 
-      {/* Mobil Menü (lg altı) */}
-      <div className="block lg:hidden">
-        <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-          <a href="/" className="flex items-center space-x-3 text-white">
-            <img
-              src="/logo.png"
-              alt="ATELIER GENÈVE - Design d'intérieur à Genève"
-              className="h-9 w-auto"
-            />
-            <div className="flex flex-col">
-              <h1 className="font-sans text-lg font-bold">ATELIER GENÈVE</h1>
+      {/* MOBİL MENÜ MODAL */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[60] lg:hidden">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-md" onClick={() => setIsMenuOpen(false)} />
+          <nav
+            ref={menuRef}
+            className="absolute top-0 right-0 h-screen w-[80%] max-w-sm bg-zinc-900 p-8 flex flex-col gap-6 shadow-2xl"
+          >
+            <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+              <span className="font-bold text-white">MENU</span>
+              <X className="text-white cursor-pointer" onClick={() => setIsMenuOpen(false)} />
             </div>
-          </a>
 
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white p-2 rounded-lg hover:bg-white/10 transition"
-            aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Açılır Menü + Overlay */}
-        {isMenuOpen && (
-          <div
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
-            aria-hidden="true"
-          >
-            <div
-              ref={menuRef}
-              className="bg-black/50 backdrop-blur-lg 
-                        border-t border-white/25 
-                        text-white 
-                        px-6 py-5 
-                        space-y-4 
-                        text-center 
-                        text-xl
-                        font-bold
-                        shadow-xl
-                        max-w-5xl 
-                        mx-auto"
+            <a
+              href="tel:+41772094090"
+              className="flex items-center justify-center gap-3 bg-primary text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/20"
             >
-              {/* TELEFON CTA (Mobile) */}
-              <a
-                href="tel:+41772094090"
-                className="flex items-center justify-center gap-3 
-                           bg-primary text-white py-3 rounded-full 
-                           font-bold text-lg mb-3"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Phone size={20} />
-                APPEL +41 77 209 40 90
-              </a>
+              <Phone size={20} />
+              APPELER
+            </a>
 
+            <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link
                   key={item.link}
                   to={item.link}
-                  className="block 
-                            hover:bg-white/35 
-                            hover:rounded-lg 
-                            transition-all 
-                            duration-200 
-                            py-3 
-                            px-5 
-                            rounded-md
-                            font-bold"
+                  className="text-white text-xl font-medium py-3 border-b border-white/5"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
-          </div>
-        )}
-      </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

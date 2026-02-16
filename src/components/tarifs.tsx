@@ -1,5 +1,5 @@
-// components/tarifs/Tarifs.tsx
 import React from 'react';
+import { Check } from "lucide-react";
 
 interface TarifItem {
   service: string;
@@ -16,116 +16,66 @@ const Tarifs: React.FC = () => {
     { service: "Mises à Jour Système & Logiciels", price: "50 CHF" },
   ];
 
+  const advantages = [
+    "Transparence tarifaire précise",
+    "Garantie satisfaction 3 mois",
+    "Service de livraison à domicile",
+    "Suivi de réparation en direct",
+    "Engagement qualité certifié",
+    "Support client réactif"
+  ];
+
   return (
-    // bg-gray-50 kaldırıldı, py-12 azaltıldı ve pt-8 eklendi (sadece üst boşluk)
     <section 
       id="tarifs" 
-      className="pt-8" 
-      style={{ scrollMarginTop: '4rem' }}
+      className="py-12 lg:py-16 bg-white" 
+      style={{ scrollMarginTop: '2rem' }}
     >
-      {/* max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 eklendi (alt boşluk için) */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="max-w-4xl mx-auto px-4">
+        
+        {/* Başlık - Services bölümüyle standart hale getirildi */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Nos Tarifs
-          </h1>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+            Nos <span className="text-sky-blue">Tarifs</span>
+          </h2>
+          <p className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg">
+            Des prix clairs et transparents pour tous vos besoins informatiques à Genève.
+          </p>
         </div>
         
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-blue-50">
-                <tr>
-                  <th className="pl-8 pr-2 py-4 text-left text-lg font-bold text-gray-800 uppercase tracking-wider">
-                    Service
-                  </th>
-                  <th className="pl-2 pr-8 py-4 text-right text-lg font-bold text-gray-800 uppercase tracking-wider border-l border-blue-200">
-                    Prix
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {tariffs.map((item, index) => (
-                  <tr key={index} className="hover:bg-blue-50 transition-colors duration-200">
-                    <td className="pl-8 pr-2 py-4 text-sm text-gray-700">
-                      {item.service}
-                    </td>
-                    <td className="pl-2 pr-8 py-4 text-sm text-gray-700 text-right font-medium border-l border-blue-100">
-                      {item.price}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="p-8 bg-blue-50">
-            <div className="p-6 bg-white rounded-lg border border-blue-200">
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 rounded-full bg-blue-500 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-gray-700">
-                    <span className="font-medium">Transparence tarifaire :</span> Tous nos services sont facturés avec transparence et précision
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 rounded-full bg-blue-500 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-gray-700">
-                    <span className="font-medium">Garantie satisfait ou remboursé :</span> Chaque intervention bénéficie d'une garantie de 3 mois
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 rounded-full bg-blue-500 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-gray-700">
-                    <span className="font-medium">Service complet :</span> Votre ordinateur est récupéré à votre adresse et vous est livré une fois réparé
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 rounded-full bg-blue-500 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-gray-700">
-                    <span className="font-medium">Suivi personnalisé :</span> Vous êtes informé en temps réel de l'avancement de la réparation
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 rounded-full bg-blue-500 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-gray-700">
-                    <span className="font-medium">Emballage sécurisé :</span> Votre appareil est soigneusement emballé pour un transport sans risque
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="flex-shrink-0 w-5 h-5 mt-0.5 mr-3 rounded-full bg-blue-500 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <span className="text-sm text-gray-700">
-                    <span className="font-medium">Engagement qualité :</span> Nous ne considérons notre travail comme terminé que lorsque vous êtes pleinement satisfait
-                  </span>
-                </li>
-              </ul>
-            </div>
+        {/* Fiyat Listesi - Temiz ve Okunaklı */}
+        <div className="mb-12">
+          <div className="divide-y divide-slate-100 border-t border-b border-slate-50">
+            {tariffs.map((item, index) => (
+              <div 
+                key={index} 
+                className="flex items-center justify-between py-4 sm:py-5 hover:bg-slate-50/50 transition-colors"
+              >
+                <span className="text-slate-800 text-base sm:text-xl font-semibold pr-4">
+                  {item.service}
+                </span>
+                <span className="text-blue-600 font-bold text-lg sm:text-2xl whitespace-nowrap">
+                  {item.price}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Avantajlar - Standart Okunabilir Font */}
+        <div className="grid gap-y-5 gap-x-8 sm:grid-cols-2">
+          {advantages.map((text, idx) => (
+            <div key={idx} className="flex items-center space-x-3">
+              <div className="bg-green-100 rounded-full p-1.5 flex-shrink-0">
+                <Check className="h-5 w-5 text-green-600" strokeWidth={3} />
+              </div>
+              <span className="text-base sm:text-xl text-slate-700 font-semibold leading-snug">
+                {text}
+              </span>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
