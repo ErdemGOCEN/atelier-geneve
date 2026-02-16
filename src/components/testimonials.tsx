@@ -1,275 +1,87 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+
 import { Star } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 
-export function Highlight({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+export function Highlight({ children }: { children: React.ReactNode }) {
   return (
-    <span
-      className={cn(
-        "bg-blue-500/10 p-1 py-0.5 font-bold text-blue-500",
-        className
-      )}
-    >
+    <span className="bg-sky-500/10 px-1.5 py-0.5 font-bold text-sky-600 rounded-md mx-0.5 whitespace-nowrap">
       {children}
     </span>
   );
 }
 
-export interface TestimonialCardProps {
-  name: string;
-  role: string;
-  img?: string;
-  description: React.ReactNode;
-  className?: string;
-  [key: string]: any;
-}
+const testimonials = [
+  { name: "Marie Dubois", role: "Marketing, Eaux-Vives", img: "https://randomuser.me/api/portraits/women/1.jpg", description: <>Atelier Genève a sauvé mon MacBook pro. <Highlight>Le technicien est venu à Eaux-Vives</Highlight> le jour même. Service impeccable!</> },
+  { name: "Thomas Martin", role: "Photographe, Carouge", img: "https://randomuser.me/api/portraits/men/2.jpg", description: <>Virus supprimés et système sécurisé. <Highlight>Mon outil de travail est comme neuf.</Highlight> Merci à l'équipe de Carouge!</> },
+  { name: "Sophie Lambert", role: "Indépendante, Plainpalais", img: "https://randomuser.me/api/portraits/women/3.jpg", description: <>Installation de mon setup pro à domicile. <Highlight>Configuration parfaite</Highlight> de mes logiciels de gestion.</> },
+  { name: "Jean Petit", role: "Gérant, Rue du Rhône", img: "https://randomuser.me/api/portraits/men/4.jpg", description: <>Dépannage d'urgence sur notre système de caisse. <Highlight>Réactivité incroyable</Highlight> avant le service du soir.</> },
+  { name: "Claire Moreau", role: "Architecte, Champel", img: "https://randomuser.me/api/portraits/women/5.jpg", description: <>Récupération de données sur un disque dur externe. <Highlight>Ils ont sauvé mes plans</Highlight> d'un projet crucial.</> },
+  { name: "David Rousseau", role: "Startup, Plan-les-Ouates", img: "https://randomuser.me/api/portraits/men/6.jpg", description: <>Maintenance mensuelle pour notre parc informatique. <Highlight>Sérieux et compétents,</Highlight> de vrais experts IT à Genève.</> },
+  { name: "Lucie Bernard", role: "Enseignante, Meyrin", img: "https://randomuser.me/api/portraits/women/7.jpg", description: <>Mon PC familial ramait énormément. <Highlight>Nettoyage et optimisation</Highlight> faits en un temps record. Bravo!</> },
+  { name: "Marc Lévy", role: "Avocat, Vieille-Ville", img: "https://randomuser.me/api/portraits/men/8.jpg", description: <>Soutien technique discret et très efficace. <Highlight>Une adresse précieuse</Highlight> au centre-ville pour les professionnels.</> },
+  { name: "Emma Fournier", role: "Étudiante, UNIGE", img: "https://randomuser.me/api/portraits/women/9.jpg", description: <>Écran de laptop changé en 24h. <Highlight>Prix très honnête</Highlight> pour une qualité suisse. Je recommande!</> },
+  { name: "Nicolas Roche", role: "Médecin, Florissant", img: "https://randomuser.me/api/portraits/men/10.jpg", description: <>Sécurisation de mon réseau de cabinet. <Highlight>Discrétion et professionnalisme</Highlight> total. Merci beaucoup.</> },
+  { name: "Julie Morel", role: "Boutique, Chêne-Bourg", img: "https://randomuser.me/api/portraits/women/11.jpg", description: <>Problème de Wi-Fi résolu rapidement dans mon commerce. <Highlight>Service client au top.</Highlight></> },
+  { name: "Antoine Blanc", role: "Freelance, Lancy", img: "https://randomuser.me/api/portraits/men/12.jpg", description: <>Montage de mon PC sur mesure. <Highlight>Conseils d'expert</Highlight> et montage très propre. Une pépite!</> },
+  { name: "Isabelle Perrin", role: "Retraitée, Onex", img: "https://randomuser.me/api/portraits/women/13.jpg", description: <>Aide précieuse pour configurer ma tablette et mes emails. <Highlight>Très patients et pédagogues.</Highlight></> },
+  { name: "Paul Girard", role: "Chef de cuisine, Pâquis", img: "https://randomuser.me/api/portraits/men/14.jpg", description: <>Ordinateur pro réparé en urgence un samedi. <Highlight>Ils nous ont sauvé la mise!</Highlight></> },
+  { name: "Chloé Simon", role: "Designer, Versoix", img: "https://randomuser.me/api/portraits/women/15.jpg", description: <>Mise à jour matérielle de mon iMac. <Highlight>Il a retrouvé une seconde jeunesse.</Highlight> Travail soigné.</> },
+  { name: "Julien Faure", role: "Commerçant, Thônex", img: "https://randomuser.me/api/portraits/men/16.jpg", description: <>Backup cloud installé pour ma boutique. <Highlight>Esprit tranquille</Highlight> désormais pour mes données.</> },
+];
 
-export function TestimonialCard({
-  description,
-  name,
-  img,
-  role,
-  className,
-  ...props
-}: TestimonialCardProps) {
-  return (
-    <div
-      className={cn(
-        "mb-4 flex w-full cursor-pointer break-inside-avoid flex-col items-center justify-between gap-6 rounded-xl p-4",
-        "border-border bg-card/50 border shadow-sm",
-        "transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md",
-        className
-      )}
-      {...props}
-    >
-      <div className="text-muted-foreground text-sm font-normal select-none">
-        {description}
-        <div className="flex flex-row py-1">
-          <Star className="size-4 fill-blue-500 text-blue-500" />
-          <Star className="size-4 fill-blue-500 text-blue-500" />
-          <Star className="size-4 fill-blue-500 text-blue-500" />
-          <Star className="size-4 fill-blue-500 text-blue-500" />
-          <Star className="size-4 fill-blue-500 text-blue-500" />
-        </div>
+const TestimonialCard = ({ name, role, img, description }: any) => (
+  <div className="mb-6 flex w-full flex-col justify-between gap-5 rounded-[2rem] p-8 border border-slate-100 bg-white shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
+    <div className="space-y-4">
+      <div className="flex gap-0.5">
+        {[...Array(5)].map((_, i) => <Star key={i} className="size-4 fill-sky-500 text-sky-500" />)}
       </div>
-
-      <div className="flex w-full items-center justify-start gap-5 select-none">
-        <img
-          width={40}
-          height={40}
-          src={img || ""}
-          alt={name}
-          className="size-10 rounded-full ring-1 ring-blue-500/20 ring-offset-2"
-        />
-
-        <div>
-          <p className="text-foreground font-medium">{name}</p>
-          <p className="text-muted-foreground text-xs font-normal">{role}</p>
-        </div>
+      <p className="text-slate-600 text-sm md:text-base leading-relaxed italic">"{description}"</p>
+    </div>
+    <div className="flex items-center gap-4 pt-4 border-t border-slate-50">
+      <img src={img} alt={name} className="size-12 rounded-full object-cover ring-2 ring-sky-50" />
+      <div>
+        <h4 className="text-slate-900 font-bold text-sm leading-none mb-1">{name}</h4>
+        <p className="text-slate-500 text-[10px] uppercase tracking-wider font-semibold">{role}</p>
       </div>
     </div>
-  );
-}
-
-const testimonials = [
-  {
-    name: "Marie Dubois",
-    role: "Directrice Marketing, Genève",
-    img: "https://randomuser.me/api/portraits/women/22.jpg",
-    description: (
-      <p>
-        Atelier Genève a sauvé mon ordinateur professionnel.
-        <Highlight>
-          Le technicien est venu le lendemain et a résolu tous mes problèmes.
-        </Highlight>{" "}
-        Service rapide et professionnel, je recommande vivement !
-      </p>
-    ),
-  },
-  {
-    name: "Thomas Martin",
-    role: "Photographe Freelance, Carouge",
-    img: "https://randomuser.me/api/portraits/men/33.jpg",
-    description: (
-      <p>
-        Mon MacBook avait des virus après un voyage.
-        <Highlight>
-          Atelier Genève l'a complètement nettoyé et sécurisé.
-        </Highlight>{" "}
-        Mon ordinateur fonctionne mieux qu'avant, merci !
-      </p>
-    ),
-  },
-  {
-    name: "Sophie Lambert",
-    role: "Comptable, Vernier",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
-    description: (
-      <p>
-        Installation complète de mon nouveau PC par Atelier Genève.
-        <Highlight>
-          Tout a été configuré parfaitement avec mes logiciels de comptabilité.
-        </Highlight>{" "}
-        Un service sur mesure et très compétent.
-      </p>
-    ),
-  },
-  {
-    name: "Jean Petit",
-    role: "Restaurant Le Jardin, Genève",
-    img: "https://randomuser.me/api/portraits/men/55.jpg",
-    description: (
-      <p>
-        Notre système de caisse a planté avant le service.
-        <Highlight>
-          L'équipe d'Atelier Genève est intervenue en urgence et a tout réparé.
-        </Highlight>{" "}
-        Professionnalisme et réactivité exceptionnels !
-      </p>
-    ),
-  },
-  {
-    name: "Claire Moreau",
-    role: "Architecte d'Intérieur, Eaux-Vives",
-    img: "https://randomuser.me/api/portraits/women/67.jpg",
-    description: (
-      <p>
-        Mes données importantes étaient bloquées sur un disque dur.
-        <Highlight>
-          Atelier Genève a récupéré tous mes projets sans aucun problème.
-        </Highlight>{" "}
-        Un vrai miracle, je suis très reconnaissante !
-      </p>
-    ),
-  },
-  {
-    name: "David Rousseau",
-    role: "Startup Tech, Plan-les-Ouates",
-    img: "https://randomuser.me/api/portraits/men/78.jpg",
-    description: (
-      <p>
-        Support informatique mensuel pour notre petite entreprise.
-        <Highlight>
-          Atelier Genève gère toute notre infrastructure informatique.
-        </Highlight>{" "}
-        Fiabilité totale et tarifs très compétitifs à Genève.
-      </p>
-    ),
-  },
-  {
-    name: "Isabelle Blanc",
-    role: "Professeure, Meyrin",
-    img: "https://randomuser.me/api/portraits/women/89.jpg",
-    description: (
-      <p>
-        Mon ordinateur familial ralentissait énormément.
-        <Highlight>
-          Atelier Genève l'a optimisé complètement en 2 heures.
-        </Highlight>{" "}
-        Mes enfants peuvent travailler sans problème maintenant !
-      </p>
-    ),
-  },
-  {
-    name: "Pierre Garnier",
-    role: "Médecin, Champel",
-    img: "https://randomuser.me/api/portraits/men/92.jpg",
-    description: (
-      <p>
-        Urgence informatique le week-end pour mon cabinet médical.
-        <Highlight>
-          Atelier Genève a répondu immédiatement et résolu le problème.
-        </Highlight>{" "}
-        Service d'urgence disponible et très professionnel.
-      </p>
-    ),
-  },
-  {
-    name: "Nathalie Simon",
-    role: "Boutique de Mode, Rue du Rhône",
-    img: "https://randomuser.me/api/portraits/women/29.jpg",
-    description: (
-      <p>
-        Installation de notre système de point de vente par Atelier Genève.
-        <Highlight>
-          Configuration parfaite et formation de notre équipe incluse.
-        </Highlight>{" "}
-        Un partenaire informatique fiable pour notre commerce.
-      </p>
-    ),
-  },
-  {
-    name: "Marc Bernard",
-    role: "Consultant IT, Genève",
-    img: "https://randomuser.me/api/portraits/men/45.jpg",
-    description: (
-      <p>
-        Même en tant que professionnel IT, j'utilise Atelier Genève.
-        <Highlight>
-          Leur expertise en réparation hardware est impressionnante.
-        </Highlight>{" "}
-        Des techniciens compétents et honnêtes, rares à Genève !
-      </p>
-    ),
-  },
-];
+  </div>
+);
 
 export default function Testimonials() {
   return (
-    <section id="testimonials">
-      <div className="relative container py-24 px-4 md:px-6 mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-foreground mb-4 text-center text-4xl leading-[1.2] font-bold tracking-tighter md:text-5xl">
-            Ce que disent nos clients à Genève
+    <section id="testimonials" className="py-24 lg:py-40 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        
+        <div className="text-center space-y-6 mb-16 lg:mb-24">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
+            Ce que disent <span className="text-sky-blue">nos clients</span>
           </h2>
-        </motion.div>
+          <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium">
+            Découvrez les expériences de nos clients à travers tout le canton de Genève.
+          </p>
+        </div>
 
-        <div className="relative mt-6 max-h-[70vh] overflow-hidden">
-          <div className="gap-4 md:columns-2 xl:columns-3 2xl:columns-3">
-            {Array(Math.ceil(testimonials.length / 4))
-              .fill(0)
-              .map((_, i) => (
-                <Marquee
-                  vertical
-                  key={i}
-                  className={cn({
-                    "[--duration:60s]": i === 1,
-                    "[--duration:30s]": i === 2,
-                    "[--duration:70s]": i === 3,
-                  })}
-                >
-                  {testimonials.slice(i * 3, (i + 1) * 3).map((card, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        delay: Math.random() * 0.8,
-                        duration: 1.2,
-                      }}
-                    >
-                      <TestimonialCard {...card} />
-                    </motion.div>
-                  ))}
-                </Marquee>
-              ))}
-          </div>
-          <div className="from-background pointer-events-none absolute inset-x-0 bottom-0 h-1/4 w-full bg-gradient-to-t from-20%"></div>
-          <div className="from-background pointer-events-none absolute inset-x-0 top-0 h-1/4 w-full bg-gradient-to-b from-20%"></div>
+        <div className="relative flex h-[800px] flex-row items-start justify-center gap-6 overflow-hidden">
+          {/* Sütun 1 - Daha Yavaş */}
+          <Marquee vertical className="[--duration:80s] flex-1">
+            {testimonials.slice(0, 6).map((t, i) => <TestimonialCard key={`col1-${i}`} {...t} />)}
+          </Marquee>
+
+          {/* Sütun 2 - Orta Hız */}
+          <Marquee vertical className="[--duration:60s] hidden md:flex flex-1">
+            {testimonials.slice(6, 11).map((t, i) => <TestimonialCard key={`col2-${i}`} {...t} />)}
+          </Marquee>
+
+          {/* Sütun 3 - En Hızlı */}
+          <Marquee vertical className="[--duration:70s] hidden lg:flex flex-1">
+            {testimonials.slice(11, 16).map((t, i) => <TestimonialCard key={`col3-${i}`} {...t} />)}
+          </Marquee>
+
+          {/* Maskeler */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white via-white/80 to-transparent z-20" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white via-white/80 to-transparent z-20" />
         </div>
       </div>
     </section>
