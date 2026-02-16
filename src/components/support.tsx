@@ -3,13 +3,7 @@ import {
   MessageSquare,
   UserPlus,
 } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
 import WhatsAppLink from "./whatsapp-link";
 
 const cards = [
