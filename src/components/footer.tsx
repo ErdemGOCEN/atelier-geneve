@@ -52,10 +52,10 @@ export default function Footer() {
                 📍 Bd du Pont-d'Arve 40, Genève
               </a>
               <a
-                href="tel:+41772094090"
+                href="tel:+41000000000"
                 className="text-primary font-bold text-base hover:underline flex items-center justify-center md:justify-start gap-2 transition"
               >
-                📞 077 209 40 90
+                📞 000 000 000
               </a>
             </address>
           </div>
