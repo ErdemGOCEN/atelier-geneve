@@ -21,7 +21,7 @@ const WhatsAppLink = ({ title = "WhatsApp" }: { title?: string }) => {
 
   return (
     <a
-      href={`https://wa.me/41772094090?text=${encodedMessage}`}
+      href={`https://wa.me/4100000000?text=${encodedMessage}`}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(

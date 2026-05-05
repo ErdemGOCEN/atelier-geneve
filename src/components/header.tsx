@@ -92,11 +92,11 @@ export default function Header() {
           ))}
 
           <a
-            href="tel:+41772094090"
+            href="tel:+41000000000"
             className="ml-4 flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full font-bold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg"
           >
             <Phone size={16} />
-            077 209 40 90
+            000 000 000
           </a>
         </nav>
 
@@ -124,7 +124,7 @@ export default function Header() {
             </div>
 
             <a
-              href="tel:+41772094090"
+              href="tel:+41000000000"
               className="flex items-center justify-center gap-3 bg-primary text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/20"
             >
               <Phone size={20} />
